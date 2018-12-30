@@ -1,0 +1,152 @@
+--- package/gluon-respondd/src/respondd.c	2018-08-08 23:52:17.273286443 +0200
++++ package/gluon-respondd/src/respondd.c	2018-08-10 04:20:15.427132029 +0200
+@@ -127,9 +127,13 @@
+ 	json_object_object_add(ret, "software", software);
+ 
+ 	struct json_object *system = json_object_new_object();
+-	json_object_object_add(system, "site_code", get_site_code());
+-	if (gluonutil_has_domains())
++	if (gluonutil_has_domains()) {
++ 	    json_object_object_add(system, "gluon_site_code", get_site_code());
++		json_object_object_add(system, "site_code", get_domain_code());
+ 		json_object_object_add(system, "domain_code", get_domain_code());
++    } else {
++ 	    json_object_object_add(system, "site_code", get_site_code());
++    }
+ 	json_object_object_add(ret, "system", system);
+ 
+ 	return ret;
+--- package/gluon-web-admin/i18n/de.po	2018-08-08 23:53:06.718064404 +0200
++++ package/gluon-web-admin/i18n/de.po	2018-08-10 04:20:15.431132092 +0200
+@@ -21,8 +21,8 @@
+ "secure password you don't use anywhere else.<br /><br />If you set an empty "
+ "password, login via password will be disabled. This is the default."
+ msgstr ""
+-"Alternativ kannst du auch ein Passwort setzen. Wähle bitte ein sicheres "
+-"Passwort, das du nirgendwo anders verwendest.<br /><br />Beim Setzen eines "
++"Alternativ kannst Du auch ein Passwort setzen. Wähle bitte ein sicheres "
++"Passwort, das Du nirgendwo anders verwendest.<br /><br />Beim Setzen eines "
+ "leeren Passworts wird der Login per Passwort gesperrt (dies ist die Standard-"
+ "Einstellung)."
+ 
+@@ -125,8 +125,8 @@
+ msgstr "Datei hochladen"
+ 
+ msgid "You can manually upgrade your firmware here."
+-msgstr "Hier kannst du ein manuelles Firmwareupdate durchführen."
++msgstr "Hier kannst Du ein manuelles Firmwareupdate durchführen."
+ 
+ msgid "You can provide your SSH keys here (one per line):"
+ msgstr ""
+-"Hier hast du die Möglichkeit, SSH-Keys zu hinterlegen (einen pro Zeile):"
++"Hier hast Du die Möglichkeit, SSH-Keys zu hinterlegen (einen pro Zeile):"
+--- package/gluon-status-page/files/lib/gluon/status-page/view/status-page.html	2018-08-08 23:53:06.718064404 +0200
++++ package/gluon-status-page/files/lib/gluon/status-page/view/status-page.html	2018-12-21 04:51:30.733896561 +0100
+@@ -101,7 +101,7 @@
+ 				<dl>
+ 					<dt><%:Node name%></dt><dd><%| nodeinfo.hostname %></dd>
+ 					<% if nodeinfo.owner and nodeinfo.owner.contact then -%>
+-						<dt><%:Contact%></dt><dd><%| nodeinfo.owner.contact %></dd>
++						<dt><%:Contact%></dt><dd> <!-- <%| nodeinfo.owner.contact %> --></dd>
+ 					<%- end %>
+ 					<dt><%:Model%></dt><dd><%| nodeinfo.hardware.model %></dd>
+ 					<dt><%:Primary MAC address%></dt><dd><%| nodeinfo.network.mac %></dd>
+--- package/gluon-setup-mode/files/lib/gluon/setup-mode/rc.d/S20network	2018-08-08 23:52:17.273286443 +0200
++++ package/gluon-setup-mode/files/lib/gluon/setup-mode/rc.d/S20network	2018-08-10 04:20:15.427132029 +0200
+@@ -1,6 +1,6 @@
+ #!/bin/sh /etc/rc.common
+ 
+-SETUP_MODE_ADDR=192.168.1.1
++SETUP_MODE_ADDR=203.0.113.1
+ SETUP_MODE_NETMASK=255.255.255.0
+ 
+ START=20
+@@ -24,13 +24,19 @@
+ 	config_load network
+ 	config_foreach delete_interface interface
+ 
++    # Our setup has dhcp client on setup_ifname, and 203.0.113.1/24 on lan_ifname (which may be the same;
++    # needs to be tested if this works properly).
+ 	uci_add network interface setup
+ 	uci_set network setup ifname "$(lua -e 'print(require("gluon.sysconfig").setup_ifname)')"
+-	uci_set network setup macaddr "$(lua -e 'print(require("gluon.sysconfig").primary_mac)')"
++	uci_set network setup macaddr "$(lua -e 'print(require("gluon.util").generate_mac(0))')" #"$(lua -e 'print(require("gluon.sysconfig").primary_mac)')"
+ 	uci_set network setup type 'bridge'
+-	uci_set network setup proto 'static'
+-	uci_set network setup ipaddr "$SETUP_MODE_ADDR"
+-	uci_set network setup netmask "$SETUP_MODE_NETMASK"
++	uci_set network setup proto 'dhcp'
++
++	uci_add network interface fallback
++	uci_set network fallback ifname "$(lua -e 'print(require("gluon.sysconfig").lan_ifname)')"
++	uci_set network fallback proto 'static'
++	uci_set network fallback ipaddr "$SETUP_MODE_ADDR"
++	uci_set network fallback netmask "$SETUP_MODE_NETMASK"
+ 
+ 	uci_commit network
+ )
+--- package/gluon-setup-mode/luasrc/lib/gluon/upgrade/320-setup-ifname	2018-08-08 23:52:17.273286443 +0200
++++ package/gluon-setup-mode/luasrc/lib/gluon/upgrade/320-setup-ifname	2018-08-10 04:20:15.427132029 +0200
+@@ -4,26 +4,27 @@
+ local sysconfig = require 'gluon.sysconfig'
+ 
+ 
+-if sysconfig.setup_ifname then
+-	os.exit(0)
+-end
++-- wusel, 20170505: Make sure WAN is used for setup ...
++-- if sysconfig.setup_ifname then
++--   os.exit(0)
++-- end
+ 
+-if platform.match('ar71xx', 'generic', {
+-	'cpe210',
+-	'cpe510',
+-	'wbs210',
+-	'wbs510',
+-	'airgateway',
+-	'nanostation-m',
+-	'nanostation-m-xw',
+-	'unifi-outdoor-plus',
+-	'uap-pro',
+-	'unifiac-pro'
+-}) or platform.match('ar71xx', 'mikrotik') then
++-- if platform.match('ar71xx', 'generic', {
++-- 	'cpe210',
++-- 	'cpe510',
++-- 	'wbs210',
++-- 	'wbs510',
++-- 	'airgateway',
++-- 	'nanostation-m',
++-- 	'nanostation-m-xw',
++-- 	'unifi-outdoor-plus',
++-- 	'uap-pro',
++-- 	'unifiac-pro'
++-- }) or platform.match('ar71xx', 'mikrotik') then
+ 	sysconfig.setup_ifname = sysconfig.config_ifname or sysconfig.wan_ifname or sysconfig.lan_ifname
+-else
+-	sysconfig.setup_ifname = sysconfig.config_ifname or sysconfig.lan_ifname or sysconfig.wan_ifname
+-end
++-- else
++-- 	sysconfig.setup_ifname = sysconfig.config_ifname or sysconfig.lan_ifname or sysconfig.wan_ifname
++-- end
+ 
+ -- Remove the old sysconfig setting
+ sysconfig.config_ifname = nil
+--- package/gluon-setup-mode/Makefile	2018-08-08 23:52:17.273286443 +0200
++++ package/gluon-setup-mode/Makefile	2018-08-10 04:20:15.427132029 +0200
+@@ -9,12 +9,12 @@
+ include ../gluon.mk
+ 
+ define Package/gluon-setup-mode
+-  TITLE:=Setup mode
++  TITLE:=Our setup mode has dhcp client on setup_ifname (WAN), and 203.0.113.1/24 on lan_ifname (LAN)
+   DEPENDS:=+gluon-core +gluon-lock-password +ubus +dnsmasq
+ endef
+ 
+ define Package/gluon-setup-mode/description
+-	Offline mode to perform basic setup in a secure manner.
++	Mode to perform basic setup in a connected way (i. e. with Internet access)
+ endef
+ 
+ $(eval $(call BuildPackageGluon,gluon-setup-mode))
