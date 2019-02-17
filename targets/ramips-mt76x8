@@ -1,10 +1,12 @@
-if [ "$BROKEN" ]; then
+# Remove broken flag to play around with the gl-mt300n-v2
+#if [ "$BROKEN" ]; then
 
 # GL.iNet
 
 device gl-mt300n-v2 gl-mt300n-v2
 factory
 
+if [ "$BROKEN" ]; then
 # TP-Link
 
 device tp-link-archer-c50-v3 tplink_c50-v3
