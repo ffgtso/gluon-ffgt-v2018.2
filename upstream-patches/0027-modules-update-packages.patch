@@ -1,0 +1,61 @@
+From 278108dd8e092d64fc0faf3605b4a107658fa17a Mon Sep 17 00:00:00 2001
+From: Martin Weinelt <martin@darmstadt.freifunk.net>
+Date: Mon, 25 Feb 2019 14:47:12 +0100
+Subject: [PATCH] modules: update packages
+
+5de163d67 vallumd: bump to 0.1.4
+b8c2c2b1b mosquitto: update to 1.5.7
+8a2d56684 irssi: update to 1.2.0
+d0f5ae180 [18.06] python3: fix [CVE-2018-20406]
+dad217d34 shadowsocks-libev: flush ss rules on entry
+bbc2e68ed mosquitto: bump to 1.5.6
+9ffcfea19 mariadb: bump to 10.1.38
+09b794ecc stubby: update to version 0.2.4
+41c4f82f8 stubby: Remove iamperson347 from maintainer
+2cf2210d8 stubby: add Jonathan Underwood as co-maintainer (#7307)
+709a73604 stubby: add reload_config to documentation
+aa8380721 stubby: fix loading of config file
+6e2451dd0 stubby: add uci support to init file
+7a2b9df89 stubby: bump PKG_RELEASE
+304596d21 stubby: remove unnecessary core limit
+fd8505f76 stubby: add SPKI pin set for Cloudflare cert
+b77053d35 stubby: add Cloudflare 1.0.0.1 and ::1001 servers
+3f17c54f2 stubby: use EDNS client-subnet privacy by default
+935126632 stubby: fix config file definition
+d3b090a31 stubby: rearrange Makefile for clarity
+a3a73ef7b stubby: add missing dependency on ca-certificates
+ccf0c71ac getdns: update to version 1.5.0
+07e647645 getdns: Remove iamperson347 from maintainer
+ca7555e52 getdns: fix missing libbsd dependency
+cc8439566 acme: Fix loading credentials
+fb3dd71ef youtube-dl: update to version 2019.01.30.1
+4368783e9 python-idna: Add missing dependency on python(3)-codecs
+480e4d7e8 python/python3: Fix lib2to3 fixes search
+02dd97d14 libsndfile: update to 42132c543358cee9f7c3e9e9b15bb6c1063a608e
+34dec8190 python3: backport CVE-2018-14647 patch from upstream [18.06]
+3785db429 python: backport CVE-2018-14647 patches from upstream [18.06]
+8f41fa7f8 nut: Default to run as root but fix alt runas
+f7048b725 libsndfile: update to 8ddc442d539ca775d80cdbc7af17a718634a743f a/ulaw: fix multiple buffer overflows
+e3f32b75b python/python3: fix .dist-info missing for setuptools and pip
+
+Compile-tested: ramips-mt7621, ar71xx-generic
+---
+ modules | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/modules b/modules
+index d40ed55..155b941 100644
+--- a/modules
++++ b/modules
+@@ -6,7 +6,7 @@ OPENWRT_COMMIT=1be6ff6dc0ab53d2191c49c32cae7f6f9aadd14d
+ 
+ PACKAGES_PACKAGES_REPO=https://github.com/openwrt/packages.git
+ PACKAGES_PACKAGES_BRANCH=openwrt-18.06
+-PACKAGES_PACKAGES_COMMIT=d05b98c6c86da58db5cbda3c945007be09583609
++PACKAGES_PACKAGES_COMMIT=5de163d67cf461db4c79a19c6dfe6c15d31b9bbc
+ 
+ PACKAGES_ROUTING_REPO=https://github.com/openwrt-routing/packages.git
+ PACKAGES_ROUTING_BRANCH=openwrt-18.06
+-- 
+2.5.0
+

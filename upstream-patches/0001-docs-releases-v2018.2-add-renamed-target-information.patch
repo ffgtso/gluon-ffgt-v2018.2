@@ -1,0 +1,30 @@
+From 6a8848a0217c86fe979888dddd76b76df6a99b69 Mon Sep 17 00:00:00 2001
+From: Ralf Jung <post@ralfj.de>
+Date: Wed, 2 Jan 2019 01:09:22 +0100
+Subject: [PATCH] docs: releases/v2018.2: add renamed target information to
+ changelog
+
+---
+ docs/releases/v2018.2.rst | 6 ++++++
+ 1 file changed, 6 insertions(+)
+
+diff --git a/docs/releases/v2018.2.rst b/docs/releases/v2018.2.rst
+index b466f9f..f69ffe3 100644
+--- a/docs/releases/v2018.2.rst
++++ b/docs/releases/v2018.2.rst
+@@ -81,6 +81,12 @@ ramips-mt7621 [#noibss]_
+   AP+IBSS mode unsupported: This target is not built when *GLUON_WLAN_MESH* is
+   set to ``ibss``.
+ 
++.. note::
++
++    The *ramips-mt7628* target has been renamed to *ramips-mt76x8*, and the *sunxi*
++    target has been renamed to *sunxi-cortexa7*. You might have to update your build
++    scripts accordingly.
++
+ New features
+ ************
+ 
+-- 
+2.5.0
+
