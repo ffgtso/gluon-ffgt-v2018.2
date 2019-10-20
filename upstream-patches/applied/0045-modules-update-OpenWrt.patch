@@ -1,0 +1,45 @@
+From 93be7ad5e487fda466729dc6c024eb9129e64429 Mon Sep 17 00:00:00 2001
+From: Martin Weinelt <martin@darmstadt.freifunk.net>
+Date: Fri, 5 Apr 2019 01:35:46 +0200
+Subject: [PATCH] modules: update OpenWrt
+
+ca8b4d684b kernel: bump 4.14 to 4.14.109
+1ff4cd1ff1 kernel: bump 4.9 to 4.9.166
+22a3e65662 kernel: bump 4.14 to 4.14.108
+dac25a5f22 kernel: bump 4.9 to 4.9.165
+6c3ca1d1ea kernel: bump 4.14 to 4.14.107
+dcdf50956f kernel: bump 4.9 to 4.9.164
+4336cfda12 ramips: allow packets with ttl=0
+13eb73b278 mt76: update to latest openwrt-18.06 branch
+0a637c7f87 kernel: bump 4.14 to 4.14.106
+24f32072d2 kernel: bump 4.9 to 4.9.163
+dcfca830a8 ipq40xx: copy Fritz4040 UBoot to STAGING_DIR_IMAGE
+400601f0e3 tools/libelf: Add mirrors as main site is dead
+f87a1874ef mt76: update to latest openwrt-18.06 branch
+9f2cbcad6d busybox: add missing install dir
+4918fe0291 kernel: bump 4.14 to 4.14.105
+2b9d2f6624 kernel: bump 4.9 to 4.9.162
+
+Build-tested: ar71xx-generci, ramips-mt7621
+Runtime-tested: ramips-mt7621 (D-Link DIR-860L B1)
+(cherry picked from commit e79fce2c6dc2a894d3ccc430443529e6d745ce7d)
+---
+ modules | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/modules b/modules
+index afea083..7353a8f 100644
+--- a/modules
++++ b/modules
+@@ -2,7 +2,7 @@ GLUON_FEEDS='packages routing luci gluon'
+ 
+ OPENWRT_REPO=https://git.openwrt.org/openwrt/openwrt.git
+ OPENWRT_BRANCH=openwrt-18.06
+-OPENWRT_COMMIT=8de93ce7455a61838871b43f1d69be3b67a2741e
++OPENWRT_COMMIT=ca8b4d684b57d7eee0329eae86d68ec5581615f7
+ 
+ PACKAGES_PACKAGES_REPO=https://github.com/openwrt/packages.git
+ PACKAGES_PACKAGES_BRANCH=openwrt-18.06
+-- 
+2.7.4
+

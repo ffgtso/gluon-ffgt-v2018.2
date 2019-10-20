@@ -1,0 +1,75 @@
+From bae72d9a6683a0bb5dddd55a8ea62c7e6850ea05 Mon Sep 17 00:00:00 2001
+From: Martin Weinelt <martin@darmstadt.freifunk.net>
+Date: Fri, 5 Apr 2019 01:38:30 +0200
+Subject: [PATCH] modules: update packages
+
+b7bcf24a0 znc: backport CVE fixes to 1.6
+f91539e92 Merge pull request #7807 from D-Albers/openwrt-18.06
+550de2331 Merge pull request #8449 from micmac1/ssh2-1806-181
+16fcd6d38 mosquitto: bump to v1.5.8
+1a23db5b2 php7: Add PKG_CPE_ID for proper CVE tracking
+7aacf2423 php7: update to 7.2.16
+27433fc3e php7: fix cross compiling patch (fixes #8166)
+00f6119bd php7: update to 7.2.15
+ef57201aa php7: update to 7.2.14
+e9271cf27 php7: update to 7.2.13
+1308ba92c php7: update to 7.2.12
+9e330d6e9 php7: update to 7.2.11
+5e25be535 php7: update to 7.2.10
+85c616557 php7: adjust load priority for openssl (fixes #6893)
+31d279c96 nano: update to 4.0
+59aa52ccd libssh2: version bump/CVE fixes
+e47fe43ea Jinja2: Update to 2.10
+8d7e62d95 ruby: update to 2.5.5
+17a0279dd ruby: fix build for uclibc
+017b74d35 vpnc: fix IPv6-triggered inoperability
+563aafcee postgresql: Revert adding build dependency to zlib/host
+3323ebddf Merge pull request #8403 from BKPepe/transmission_openwrt-18.06
+c0293cd99 Merge pull request #8402 from BKPepe/netdata_openwrt-18.06
+9bb4bcc9b Merge pull request #8395 from EricLuehrsen/unbound_191_1806
+d444a910f transmission: update to version 2.94
+99c3670bb Netdata: update to version 1.12.2
+1e347beb3 libtalloc: Merge 2.1.14 from master (remove libbsd dependency)
+a476bf8d0 unbound: update to 1.9.1
+060e59a28 Merge pull request #8386 from wvdakker/openwrt-18.06
+86efe678a Shorewall6: Bump to 5.2.0.5.
+9cdc22eef Shorewall: Bump to 5.2.0.5.
+3669215b2 Shorewall6-lite: Bump to 5.2.0.5.
+762093fe7 Shorewall-lite: Bump to 5.2.0.5.
+1a97a8444 Shorewall-core: Bump to 5.2.0.5.
+121072523 postgresql: add HOST_BUILD_DEPENDS:=zlib/host
+daef6665b gnurl: update to version 7.64.0
+5fff80472 libgabe: add package
+cb253649a libpbc: add new package
+f03acaa39 Merge pull request #8346 from Cynerd/jinja2-missing-dep-18.06
+2324d341e Jinja2: add missing dependency on markupsafe
+0ba0e0d1b gnunet: revert accidentally applied libmicrohttpd changes
+799c409d3 gnunet-secushare: add package (replacing gnunet-social package)
+d70e35ba1 gnunet: GNUnet v0.11.0 release
+799f553b2 postgresql: update to version 9.6.12
+257dfbb55 libextractor: update to version 1.9
+6c2266acf gnurl: update to version 7.63.0
+3e6d392e0 openvswitch: bump to version 2.8.5
+931070c26 jool: Backport two fixes for newer kernels.
+
+(cherry picked from commit 23cc093bd008833b7db40777d83496f8bce30e3a)
+---
+ modules | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/modules b/modules
+index 7353a8f..59fc8be 100644
+--- a/modules
++++ b/modules
+@@ -6,7 +6,7 @@ OPENWRT_COMMIT=ca8b4d684b57d7eee0329eae86d68ec5581615f7
+ 
+ PACKAGES_PACKAGES_REPO=https://github.com/openwrt/packages.git
+ PACKAGES_PACKAGES_BRANCH=openwrt-18.06
+-PACKAGES_PACKAGES_COMMIT=5de163d67cf461db4c79a19c6dfe6c15d31b9bbc
++PACKAGES_PACKAGES_COMMIT=b7bcf24a00153f0c99ff2e01fa33876680c6128d
+ 
+ PACKAGES_ROUTING_REPO=https://github.com/openwrt-routing/packages.git
+ PACKAGES_ROUTING_BRANCH=openwrt-18.06
+-- 
+2.7.4
+

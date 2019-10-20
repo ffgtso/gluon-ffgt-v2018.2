@@ -1,0 +1,28 @@
+From 015b0d681a691b87956a50da7ab1e2e0ef29ae23 Mon Sep 17 00:00:00 2001
+From: bobcanthelpyou <bob@canthelpyou.com>
+Date: Sun, 24 Mar 2019 03:06:01 +0100
+Subject: [PATCH] docs: rename target sunxi to sunxi-cortexa7
+
+renamed by 210d97c53eb147ad9519118634c71e28eace4694
+---
+ docs/index.rst | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/docs/index.rst b/docs/index.rst
+index 5b02997..31e8e97 100644
+--- a/docs/index.rst
++++ b/docs/index.rst
+@@ -402,8 +402,8 @@ ramips-rt305x
+ 
+   - VoCore (8M, 16M) [#80211s]_
+ 
+-sunxi
+-^^^^^
++sunxi-cortexa7
++^^^^^^^^^^^^^^
+ 
+ * LeMaker
+ 
+-- 
+2.7.4
+
