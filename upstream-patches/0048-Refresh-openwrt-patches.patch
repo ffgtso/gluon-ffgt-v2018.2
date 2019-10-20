@@ -1,0 +1,40 @@
+From d039502ff96bb2e9da22d6412c2ae10f00009817 Mon Sep 17 00:00:00 2001
+From: Matthias Schiffer <mschiffer@universe-factory.net>
+Date: Sun, 21 Apr 2019 19:39:27 +0200
+Subject: [PATCH] Refresh openwrt patches
+
+(cherry picked from commit 6412177a4578f361eddea766193b11661b590a4c)
+---
+ patches/openwrt/0008-ipq40xx-add-support-for-the-ZyXEL-NBG6617.patch | 2 +-
+ patches/openwrt/0009-build-add-mkrasimage.patch                      | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/patches/openwrt/0008-ipq40xx-add-support-for-the-ZyXEL-NBG6617.patch b/patches/openwrt/0008-ipq40xx-add-support-for-the-ZyXEL-NBG6617.patch
+index bf44516..d80a24d 100644
+--- a/patches/openwrt/0008-ipq40xx-add-support-for-the-ZyXEL-NBG6617.patch
++++ b/patches/openwrt/0008-ipq40xx-add-support-for-the-ZyXEL-NBG6617.patch
+@@ -891,7 +891,7 @@ index 0000000000000000000000000000000000000000..d7f8c5955caee15d373a342b75c8c194
+ +	status = "okay";
+ +};
+ diff --git a/target/linux/ipq40xx/image/Makefile b/target/linux/ipq40xx/image/Makefile
+-index 38600cf979242142aa08c30163e63d911f0ddb63..d1ee1004fddce6cf6007259229d8eee5b5b2ea3b 100644
++index 90d9dfeff0c228765ac24247ce72dec497dc63f0..cb79baccd21b3fa7f35df543bfca1a7d6ba8f83f 100644
+ --- a/target/linux/ipq40xx/image/Makefile
+ +++ b/target/linux/ipq40xx/image/Makefile
+ @@ -1,6 +1,8 @@
+diff --git a/patches/openwrt/0009-build-add-mkrasimage.patch b/patches/openwrt/0009-build-add-mkrasimage.patch
+index 941c2fe..cd5ab7e 100644
+--- a/patches/openwrt/0009-build-add-mkrasimage.patch
++++ b/patches/openwrt/0009-build-add-mkrasimage.patch
+@@ -267,7 +267,7 @@ index 640557532c8a02f37bc6f84ade8cb34e7172162d..4568b656219419e9ca1156c6716bd212
+    # We cannot currently build a factory image. It is the sysupgrade image
+    # prefixed with a header (which is actually written into the MTD device).
+ diff --git a/target/linux/ipq40xx/image/Makefile b/target/linux/ipq40xx/image/Makefile
+-index d1ee1004fddce6cf6007259229d8eee5b5b2ea3b..5cd11cae237b4658906652967d8120bd0dc080a8 100644
++index cb79baccd21b3fa7f35df543bfca1a7d6ba8f83f..a0f81f7d631b6c53a5612dee172e752a9fecd06d 100644
+ --- a/target/linux/ipq40xx/image/Makefile
+ +++ b/target/linux/ipq40xx/image/Makefile
+ @@ -221,7 +221,7 @@ define Device/zyxel_nbg6617
+-- 
+2.7.4
+

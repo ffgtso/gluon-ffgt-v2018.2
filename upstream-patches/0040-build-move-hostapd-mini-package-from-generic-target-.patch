@@ -1,0 +1,52 @@
+From 6229c5997a011a162bf7d353b6f1dcc61f4dfc7c Mon Sep 17 00:00:00 2001
+From: Matthias Schiffer <mschiffer@universe-factory.net>
+Date: Fri, 19 Apr 2019 13:53:09 +0200
+Subject: [PATCH] build: move hostapd-mini package from generic target to
+ Makefile
+
+By passing the package name through merge_packages, it becomes possible to
+override the package choice in GLUON_SITE_PACKAGES again, for example:
+
+	GLUON_SITE_PACKAGES += -hostapd-mini hostapd
+
+(cherry picked from commit 134a6460a7d562f74d2737c0d44197f05a04dc64)
+---
+ Makefile        | 4 +++-
+ targets/generic | 2 +-
+ 2 files changed, 4 insertions(+), 2 deletions(-)
+
+diff --git a/Makefile b/Makefile
+index 22f3eba..5b8ec27 100644
+--- a/Makefile
++++ b/Makefile
+@@ -106,6 +106,8 @@ list-targets: FORCE
+ 	@$(foreach target,$(GLUON_TARGETS),echo '$(target)';)
+ 
+ 
++GLUON_DEFAULT_PACKAGES := hostapd-mini
++
+ GLUON_FEATURE_PACKAGES := $(shell scripts/features.sh '$(GLUON_FEATURES)' || echo '__ERROR__')
+ ifneq ($(filter __ERROR__,$(GLUON_FEATURE_PACKAGES)),)
+ $(error Error while evaluating GLUON_FEATURES)
+@@ -118,7 +120,7 @@ define merge_packages
+     GLUON_PACKAGES := $$(strip $$(filter-out -$$(patsubst -%,%,$(pkg)) $$(patsubst -%,%,$(pkg)),$$(GLUON_PACKAGES)) $(pkg))
+   )
+ endef
+-$(eval $(call merge_packages,$(GLUON_FEATURE_PACKAGES) $(GLUON_SITE_PACKAGES)))
++$(eval $(call merge_packages,$(GLUON_DEFAULT_PACKAGES) $(GLUON_FEATURE_PACKAGES) $(GLUON_SITE_PACKAGES)))
+ 
+ config: FORCE
+ 	@$(CheckExternal)
+diff --git a/targets/generic b/targets/generic
+index c9b57cc..517603a 100644
+--- a/targets/generic
++++ b/targets/generic
+@@ -53,4 +53,4 @@ fi
+ 
+ 
+ packages '-odhcpd-ipv6only' '-ppp' '-ppp-mod-pppoe' '-wpad-mini'
+-packages 'gluon-core' 'ip6tables' 'hostapd-mini'
++packages 'gluon-core' 'ip6tables'
+-- 
+2.7.4
+
