@@ -1,0 +1,6 @@
+wusel@ysabell:~/workspace$ git clone https://github.com/freifunk-gluon/gluon.git -b v2018.2.x
+wusel@ysabell:~/workspace$ cd gluon/
+wusel@ysabell:~/workspace/gluon$ (cd .. ; wget https://raw.githubusercontent.com/ffgtso/gluon-ffgt-v2018.2/v2018.2-ffgt/stuff/0001-Enable-Fritzbox-7360SL-7320-on-Gluon-v2018.2.x-ENTER.patch)
+wusel@ysabell:~/workspace/gluon$ git am <../0001-Enable-Fritzbox-7360SL-7320-on-Gluon-v2018.2.x-ENTER.patch
+
+Should work ...
