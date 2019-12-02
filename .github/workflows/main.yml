@@ -1,0 +1,38 @@
+name: CI
+
+on: [push]
+
+jobs:
+  clone:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name : clone
+        run: |
+          "if [ ! -d gluon-ffgt-v2018.2-tng ]; then && git clone https://github.com/ffgtso/gluon-ffgt-v2018.2.git gluon-ffgt-v2018.2-tng && fi",
+          "cd gluon-ffgt-v2018.2-tng && git pull && git checkout v2018.2-ffgt",
+          "if [ -d site ]; then && /bin/rm -rf site && fi",
+          "git clone https://github.com/ffgtso/site-ffgt-v2018.1.git site",
+          "sed -i -e s/mesh-batman-adv-14/mesh-batman-adv-15/g -e s/mesh-vpn-fastd/mesh-vpn-tunneldigger/g site/site.mk",
+          "sed -i -e s/mesh-vpn-tunneldigger/mesh-vpn-tunneldigger gluon-tunneldigger-watchdog/ site/site.mk",
+          "mv site/domains site/domains-fastd",
+          "mv site/domains-l2tp site/domains",
+          "if [ -d ffgt_packages-v2018.1 ]; then && /bin/rm -rf ffgt_packages-v2018.1 && fi",
+          "git clone https://github.com/ffgtso/ffgt_packages-v2018.1.git",
+          "if [ -d ffgt_packages-v2018.1 ]; then && PKGLIVECOMMIT=\"`(cd ffgt_packages-v2018.1; git rev-parse HEAD)`\" && sed -e "s/PACKAGES_FFGT_COMMIT=.*$/PACKAGES_FFGT_COMMIT=${PKGLIVECOMMIT}/" -i site/modules && fi",
+          "if [ ! -e baserelease.txt ]; then && echo "1.1.5~" >baserelease.txt && fi",
+          "if [ ! -e buildnumber.txt ]; then && echo "0" >buildnumber.txt && fi"
+      #- name: Clean temp directory
+      #  run: rm -rf *
+      #  working-directory: ./temp
+
+  build:
+    
+    runs-on: [ubuntu-latest]
+    
+    needs: clone
+    
+    steps:
+      - name: build
+      - uses: "ffgtso/gluon-ffgt-v2018.2@master"
