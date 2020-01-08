@@ -16,3 +16,14 @@ cd ../gluon-ffgt-v2018.2/
 # commit & push
 cd upstream-patches/
 for i in 0*.patch ; do git am < $i && mv $i applied/ ; done
+
+###### Merge leftovers/sync with upstream
+
+wusel@ysabell:/data/wusel/gluon-upstream$ for i in $(find . -type f | grep -v \.git) ; do target=../gluon-ffgt-v2018.2/$i ; if [ ! -e ${target} ]; then target=/dev/null ; fi ; cmp ${target} $i >/dev/null 2>&1 || echo $i  ; done >/tmp/filelist
+wusel@ysabell:/data/wusel/gluon-upstream$ cd ../gluon-ffgt-v2018.2/
+wusel@ysabell:/data/wusel/gluon-ffgt-v2018.2$ for i in $(cat /tmp/filelist) ; do new=../gluon-upstream/$i ; old=${i}; if [ ! -e ${old} ]; then touch $i ; fi ; diff -u ${old} ${new} 2>/dev/null ; done >/tmp/diff.txt
+# Fix any "cannot touch ..." issue, run again
+# Verify /tmp/diff.txt to NOT UNDO FFGT specific changes, note especially changes to these files:
+# ./targets/targets.mk ./package/gluon-web-admin/i18n/de.po ./package/gluon-status-page/files/lib/gluon/status-page/view/status-page.html ./package/gluon-setup-mode/files/lib/gluon/setup-mode/rc.d/S20network ./package/gluon-setup-mode/luasrc/lib/gluon/upgrade/320-setup-ifname ./package/gluon-setup-mode/Makefile
+
+

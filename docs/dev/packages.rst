@@ -10,7 +10,7 @@ Gluon package makefiles
 As many packages share the same or a similar structure, Gluon provides a ``package/gluon.mk`` that
 can be included for common definitions. This file replaces OpenWrt's ``$(INCLUDE_DIR)/package.mk``;
 it is usually included as ``include ../gluon.mk`` from Gluon core packages, or as
-``include $(TOPDIR)../package/gluon.mk`` from feeds.
+``include $(TOPDIR)/../package/gluon.mk`` from feeds.
 
 Provided macros
 ***************
@@ -74,7 +74,7 @@ Feature flags provide a convenient way to define package selections without
 making it necessary to list each package explicitly.
 
 The main feature flag definition file is ``package/features``, but each package
-feed can provide additional defintions in a file called ``features`` at the root
+feed can provide additional definitions in a file called ``features`` at the root
 of the feed repository.
 
 Each flag *$flag* without any explicit definition will simply include the package
