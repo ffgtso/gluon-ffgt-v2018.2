@@ -1,0 +1,138 @@
+From 6cd9d01bba6cdafc95657f472e48f0cc48fad059 Mon Sep 17 00:00:00 2001
+From: Andreas Ziegler <dev@andreas-ziegler.de>
+Date: Sat, 28 Dec 2019 15:03:39 +0100
+Subject: [PATCH] modules: update OpenWrt
+
+83ce31d3d8 kernel: bump 4.9 to 4.9.207
+c280710d7a kernel: bump 4.14 to 4.14.160
+27dddb67c0 kernel: bump 4.14 to 4.14.159
+8623b58c1d scripts/dowload.pl: add archive.apache.org to apache mirror list
+e242125d71 kernel: fix *-gpio-custom module unloading
+84b74bcb0d toolchain/gcc: correct the check expr for newer clang
+66ba44c9ec lantiq: fix phys led
+b901563611 uhttpd: update to latest Git HEAD
+2152722bd3 netifd: add support for suppressing the DHCP request hostname by setting it to *
+c3337e8f48 ar71xx: fix MAC address setup for TL-WDR4300 board
+d08a63770c ramips: fix number of LAN Ports for Mikrotik RBM33G
+022f3898b1 ramips: fix switch port order for TP-Link Archer C20i
+5d92949019 kernel: bump 4.14 to 4.14.158
+361b555672 kernel: bump 4.9 to 4.9.206
+1cbde3eb9c mac80211: Adapt to changes to skb_get_hash_perturb()
+bd3b8480ab kernel: bump 4.9 to 4.9.205
+2777947a75 kernel: bump 4.14 to 4.14.156
+7863a8f302 base-files: config_generate: split macaddr with multiple ifaces
+daed78ab55 kernel: nf_conntrack_rtcache: fix WARNING on rmmod
+8f6debf633 kernel: nf_conntrack_rtcache: fix WARNING on forward path
+72ddeffc09 kernel: nf_conntrack_rtcache: fix cleanup on netns delete and rmmod
+70b73f6470 kernel: Add missing configuration option
+6e2e5d1bf8 kernel: bump 4.14 to 4.14.155
+f6f916b3e5 ar71xx: fix buttons for TP-Link TL-WDR4900 v2
+0e85ace840 ar71xx: fix LED setup for TL-WDR4900 v2
+45fefa0459 ramips: set uImage name of WeVO 11AC NAS and W2914NS v2
+b0d99e32db ar71xx: fix MAC address setup for TL-WDR4900 v2
+22fe68643f ar71xx: fix MAC addresses for Archer C5 v1, C7 v1/v2, WDR4900 v2
+2219b0258d ipq40xx: fix build error
+0a9147be6a kernel: bump 4.14 to 4.14.154
+b9e685eed5 kernel: bump 4.9 to 4.9.202
+8179ac3dc1 ar71xx: fix WLAN LED names for Archer C7
+6962c1e495 ar71xx: fix system LED names on Archer C5/C7
+e6a7eacfea mac80211: brcmfmac: fix PCIe reset crash and WARNING
+f65330d27d ramips: assign correct key-code to wps buttons
+ab6addc95d ramips: rt3833: fix build breakage
+f503bc3d25 ramips: add usb-ledtrig-usbport to DEVICE_PACKAGES of CY-SWR1100
+506bfaa126 ramips: fix MAC address setup for Samsung CY-SWR1100
+c89437e398 gitignore: ignore patches in OpenWrt root directory
+ea8f7d74ba ar71xx: fix tl-wdr3320-v2 upgrade
+79fd7593a2 ar71xx: update uboot-envtools for Netgear WNR routers
+3d3a933315 kernel: bump 4.14 to 4.14.152
+862a885103 kernel: bump 4.9 to 4.9.199
+05c858ff6a sdk: fix GCC and Python dangling symlinks
+c1d19b37d5 build: cleanup possibly dangling Python 3 host symlink
+dfd8c3bfdc build: fixup python SetupHostCommand to use python2
+69bc68b46b OpenWrt v18.06.5: revert to branch defaults
+5e4533cdd4 OpenWrt v18.06.5: adjust config defaults
+9d401013fc ustream-ssl: backport fix for CVE-2019-5101, CVE-2019-5102
+e70772311d kernel: bump 4.14 to 4.14.151
+cdc2937edd kernel: bump 4.9 to 4.9.198
+f024b4c83d scripts/ubinize-image.sh: fix buildbot breakage
+700f66ae95 kernel: mark kmod-usb-serial-wwan as hidden
+c4a2e5102d kernel: add missing symbol
+61df1285ce kernel: bump 4.14 to 4.14.150
+51431de30d kernel: bump 4.9 to 4.9.197
+0880275d5e brcm2708: Add feature flag rootfs-part
+b2fba59f10 iptables: bump PKG_RELEASE
+a2fe698a40 kernel: Added required dependencies for socket match.
+dff0b2104d kernel: netfilter: Add nf_tproxy_ipv{4,6} and nf_socket_ipv{4,6}
+3b8db97a52 tcpdump: update to 4.9.3
+96a87b90ef libpcap: update to 1.9.1
+a857fc2ded libpcap: update to 1.9.0
+31181fa062 kernel: bump 4.14 to 4.14.149
+9628612abe kernel: bump 4.14 to 4.14.148
+1737131c9d kernel: bump 4.9 to 4.9.196
+778243b3b4 kernel: bump 4.14 to 4.14.147
+d513f28351 kernel: bump 4.9 to 4.9.195
+6f1a71c2d0 apm821xx: fix fan control on highest step
+491e839262 brcm47xx: sysupgrade: fix device model detection
+4acc0db480 kernel: bump 4.14 to 4.14.146
+3699327da3 kernel: bump 4.9 to 4.9.194
+45a2c0f309 hostapd: Fix AP mode PMF disconnection protection bypass
+e289a4133c hostapd: SAE/EAP-pwd side-channel attack update
+a63edb4691 mbedtls: update to 2.16.3
+2698157d54 mbedtls: Update to version 2.16.2
+952bafa03c openssl: bump to 1.0.2t, add maintainer
+7e1db8f27c kernel: bump 4.14 to 4.14.145
+d32cf52674 kernel: bump 4.14 to 4.14.144
+745292ba10 kernel: bump 4.9 to 4.9.193
+5880dd48d5 mac80211: brcmfmac: backport the last 5.4 changes
+90f6af5108 ar71xx: fix potential IRQ misses during dispatch for qca953x
+e545808e89 ar71xx: Fix potentially missed IRQ handling during dispatch
+59e42f9e3e kernel: bump 4.14 to 4.14.143
+418cf097e7 kernel: bump 4.9 to 4.9.192
+6f677d6848 tools: mkimage: fix __u64 typedef conflict with new glibc
+c5ed9f4344 kernel: bump 4.14 to 4.14.142
+556f86bbfd kernel: bump 4.9 to 4.9.191
+2d257351f3 ramips: fix duplicate network setup for dlink, dir-615-h1
+2a22e41fe4 ramips: fix D-Link DIR-615 H1 switch port mapping
+f9dec32be7 ramips: remove duplicate case for MAC setup of freestation5
+7393ce8d87 mac80211: brcmfmac: backport more kernel 5.4 changes
+f6de1fa6c6 bzip2: Fix CVE-2019-12900
+7ac6044632 ar71xx: WNR2200: remove redundant GPIO for WLAN LED
+9d1cd9d098 kernel: bump 4.14 to 4.14.141
+4b5c77ca2f ath9k: backport dynack improvements
+73bba470a4 kernel: bump 4.14 to 4.14.140
+8bc800aa56 kernel: bump 4.9 to 4.9.190
+c948a74158 kernel: bump 4.14 to 4.14.139
+09d63fb0a6 musl: Fix CVE-2019-14697
+564d81e944 iptables: patch CVE-2019-11360 (security fix)
+5e3b21c916 musl: ldso/dlsym: fix mips returning undef dlsym
+2df2b75208 wolfssl: fixes for CVE-2018-16870 & CVE-2019-13628
+09bdc14419 kernel: bump 4.14 to 4.14.138
+e058fb3658 kernel: bump 4.9 to 4.9.189
+28dc34f249 xfsprogs: Replace valloc with posix_memalign
+24967a6c42 libbsd: Fix compilation under ARC
+30815d65d2 nftables: Fix compilation with uClibc-ng
+dc2f2a16d3 tools/patch: apply upstream patch for cve-2019-13638
+c99ceb7030 tools/patch: apply upstream patch for CVE-2019-13636
+
+Compile-tested: ar71xx-generic
+Runtime-tested: ar71xx-generic
+---
+ modules | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/modules b/modules
+index 6db2954..2e9f27d 100644
+--- a/modules
++++ b/modules
+@@ -2,7 +2,7 @@ GLUON_FEEDS='packages routing luci gluon'
+ 
+ OPENWRT_REPO=https://git.openwrt.org/openwrt/openwrt.git
+ OPENWRT_BRANCH=openwrt-18.06
+-OPENWRT_COMMIT=89808e211cd5ef5989bd0becb8cd45f9340610ff
++OPENWRT_COMMIT=83ce31d3d88429b094f3436446294a17fa7041d4
+ 
+ PACKAGES_PACKAGES_REPO=https://github.com/openwrt/packages.git
+ PACKAGES_PACKAGES_BRANCH=openwrt-18.06
+-- 
+2.7.4
+
