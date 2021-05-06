@@ -1,0 +1,30 @@
+From c50423993d2b7758e089fac51ec1e2fc74871e3d Mon Sep 17 00:00:00 2001
+From: Matthias Schiffer <mschiffer@universe-factory.net>
+Date: Sun, 28 Apr 2019 14:56:09 +0200
+Subject: [PATCH] gluon-mesh-batman-adv: drop packets from mesh with next-node
+ source or destination address (#1714)
+
+Fixes #1659
+
+(cherry picked from commit 09916f6e359114fdc6f9594f60b76a27e7352f1b)
+---
+ .../files/lib/gluon/ebtables/250-next-node                     | 3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git a/package/gluon-mesh-batman-adv/files/lib/gluon/ebtables/250-next-node b/package/gluon-mesh-batman-adv/files/lib/gluon/ebtables/250-next-node
+index 8b8d77a2..c239f81e 100644
+--- a/package/gluon-mesh-batman-adv/files/lib/gluon/ebtables/250-next-node
++++ b/package/gluon-mesh-batman-adv/files/lib/gluon/ebtables/250-next-node
+@@ -7,6 +7,9 @@ local macaddr = client_bridge.next_node_macaddr()
+ rule('FORWARD --logical-out br-client -i bat0 -o local-port -j DROP')
+ rule('FORWARD --logical-out br-client -i local-port -o bat0 -j DROP')
+ 
++rule('PREROUTING --logical-in br-client -i bat0 -s ' .. macaddr .. ' -j DROP', 'nat')
++rule('PREROUTING --logical-in br-client -i bat0 -d ' .. macaddr .. ' -j DROP', 'nat')
++
+ rule('FORWARD --logical-out br-client -o bat0 -d ' .. macaddr .. ' -j DROP')
+ rule('OUTPUT --logical-out br-client -o bat0 -d ' .. macaddr .. ' -j DROP')
+ rule('FORWARD --logical-out br-client -o bat0 -s ' .. macaddr .. ' -j DROP')
+-- 
+2.17.1
+

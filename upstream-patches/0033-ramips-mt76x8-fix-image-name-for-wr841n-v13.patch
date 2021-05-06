@@ -1,0 +1,25 @@
+From 0a0da76bda29dff05b126fcd62e2e4b9b958c547 Mon Sep 17 00:00:00 2001
+From: Martin Weinelt <martin@darmstadt.freifunk.net>
+Date: Thu, 14 Mar 2019 04:58:01 +0100
+Subject: [PATCH] ramips-mt76x8: fix image name for wr841n v13
+
+---
+ targets/ramips-mt76x8 | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/targets/ramips-mt76x8 b/targets/ramips-mt76x8
+index 6500068d..b0d8bf6b 100644
+--- a/targets/ramips-mt76x8
++++ b/targets/ramips-mt76x8
+@@ -19,7 +19,7 @@ extra_image -squashfs-tftp-recovery -bootloader .bin
+ device tp-link-archer-c50-v4 tplink_c50-v4
+ factory
+ 
+-device tp-link-tl-wr-841n-v13 tl-wr841n-v13
++device tp-link-tl-wr841n-v13 tl-wr841n-v13
+ factory
+ extra_image -squashfs-tftp-recovery -bootloader .bin
+ 
+-- 
+2.17.1
+

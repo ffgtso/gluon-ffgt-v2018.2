@@ -1,0 +1,59 @@
+From 992e72f207b7185b7e456b5480df206a3aa09bc7 Mon Sep 17 00:00:00 2001
+From: Andreas Ziegler <dev@andreas-ziegler.de>
+Date: Sun, 29 Dec 2019 16:07:53 +0100
+Subject: [PATCH] docs, README: Gluon v2018.2.4
+
+---
+ README.md                     | 2 +-
+ docs/site-example/site.conf   | 2 +-
+ docs/user/getting_started.rst | 4 ++--
+ 3 files changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/README.md b/README.md
+index b7a399c5..b2f5843b 100644
+--- a/README.md
++++ b/README.md
+@@ -21,7 +21,7 @@ the future development of Gluon.
+ 
+ Please refrain from using the `master` branch for anything else but development purposes!
+ Use the most recent release instead. You can list all releases by running `git tag`
+-and switch to one by running `git checkout v2018.2.3 && make update`.
++and switch to one by running `git checkout v2018.2.4 && make update`.
+ 
+ If you're using the autoupdater, do not autoupdate nodes with anything but releases.
+ If you upgrade using random master commits the nodes *will break* eventually.
+diff --git a/docs/site-example/site.conf b/docs/site-example/site.conf
+index e735c61d..66873cd2 100644
+--- a/docs/site-example/site.conf
++++ b/docs/site-example/site.conf
+@@ -1,4 +1,4 @@
+--- This is an example site configuration for Gluon v2018.2.3
++-- This is an example site configuration for Gluon v2018.2.4
+ --
+ -- Take a look at the documentation located at
+ -- https://gluon.readthedocs.io/ for details.
+diff --git a/docs/user/getting_started.rst b/docs/user/getting_started.rst
+index 90307cad..ef290d20 100644
+--- a/docs/user/getting_started.rst
++++ b/docs/user/getting_started.rst
+@@ -8,7 +8,7 @@ Gluon's releases are managed using `Git tags`_. If you are just getting
+ started with Gluon we recommend to use the latest stable release of Gluon.
+ 
+ Take a look at the `list of gluon releases`_ and notice the latest release,
+-e.g. *v2018.2.3*. Always get Gluon using git and don't try to download it
++e.g. *v2018.2.4*. Always get Gluon using git and don't try to download it
+ as a Zip archive as the archive will be missing version information.
+ 
+ Please keep in mind that there is no "default Gluon" build; a site configuration
+@@ -44,7 +44,7 @@ Building the images
+ -------------------
+ 
+ To build Gluon, first check out the repository. Replace *RELEASE* with the
+-version you'd like to checkout, e.g. *v2018.2.3*.
++version you'd like to checkout, e.g. *v2018.2.4*.
+ 
+ ::
+ 
+-- 
+2.17.1
+

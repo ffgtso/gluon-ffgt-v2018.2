@@ -1,0 +1,34 @@
+From 3ae816d38ded23003f5856471077039f54647b3d Mon Sep 17 00:00:00 2001
+From: Martin Weinelt <martin@darmstadt.freifunk.net>
+Date: Fri, 21 Jun 2019 00:44:10 +0200
+Subject: [PATCH] docs: fix reference to #noibss in v2018.2.1 release notes
+
+Uncovered by sphinx-build:
+docs/releases/v2018.2.1.rst:19: WARNING: Too many autonumbered footnote references: only 0 corresponding footnotes available.
+docs/releases/v2018.2.1.rst:19: WARNING: Unknown target name: "noibss".
+docs/releases/v2018.2.1.rst:26: WARNING: Unknown target name: "noibss".
+docs/releases/v2018.2.1.rst:30: WARNING: Unknown target name: "noibss".
+docs/releases/v2018.2.1.rst:34: WARNING: Unknown target name: "noibss".
+docs/releases/v2018.2.1.rst:35: WARNING: Unknown target name: "noibss".
+---
+ docs/releases/v2018.2.1.rst | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/docs/releases/v2018.2.1.rst b/docs/releases/v2018.2.1.rst
+index aa291b8a..92c729a1 100644
+--- a/docs/releases/v2018.2.1.rst
++++ b/docs/releases/v2018.2.1.rst
+@@ -34,6 +34,10 @@ ramips-mt76x8
+   - Archer C50 (v3, v4) [#noibss]_
+   - TL-WR841N (v13) [#noibss]_
+ 
++.. [#noibss]
++  Device or target does not support AP+IBSS mode: This device or target will not be built
++  when *GLUON_WLAN_MESH* is set to ``ibss``.
++
+ Bugfixes
+ ~~~~~~~~
+ 
+-- 
+2.17.1
+

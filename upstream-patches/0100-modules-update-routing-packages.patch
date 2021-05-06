@@ -1,0 +1,39 @@
+From f3ab6daa2944c89b598ec46f73ac023dd48da108 Mon Sep 17 00:00:00 2001
+From: Andreas Ziegler <dev@andreas-ziegler.de>
+Date: Sat, 28 Dec 2019 15:10:55 +0100
+Subject: [PATCH] modules: update routing packages
+
+b3125f0 Merge pull request #537 from ecsv/batadv-for-18.06
+0d22982 batman-adv: Merge bugfixes from 2019.5
+3610d11 pimbd: update to current git HEAD (#534)
+c52779c Merge pull request #520 from ecsv/batadv-for-18.06
+ee3264b batman-adv: Merge bugfixes from 2019.4
+049cb8a Merge pull request #511 from adrianschmutzler/babeld1806
+e80f582 babeld: Update to version 1.8.5
+6e50f8b nodogsplash: Backport Version 4.0.1. (#493)
+a551935 nodogsplash: Backport of Version 4.0.0. (#486)
+bb156bf Merge pull request #455 from BKPepe/bird-openwrt18.06
+d3f317b bird: update to version 1.6.6
+
+Compile-tested: ar71xx-generic
+Runtime-tested: ar71xx-generic
+---
+ modules | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/modules b/modules
+index edf58c43..8fff4c66 100644
+--- a/modules
++++ b/modules
+@@ -10,7 +10,7 @@ PACKAGES_PACKAGES_COMMIT=998ef11cb4250309ec69505d9ee4a0f376815dbe
+ 
+ PACKAGES_ROUTING_REPO=https://github.com/openwrt-routing/packages.git
+ PACKAGES_ROUTING_BRANCH=openwrt-18.06
+-PACKAGES_ROUTING_COMMIT=7589804a56baac804421b492c93004c28a627abb
++PACKAGES_ROUTING_COMMIT=b3125f0d4cf02e4c37c56c4cd7ad82166025efea
+ 
+ PACKAGES_LUCI_REPO=https://github.com/openwrt/luci.git
+ PACKAGES_LUCI_BRANCH=openwrt-18.06
+-- 
+2.17.1
+

@@ -1,0 +1,899 @@
+From 0986ec7e9b4ae5c4c68292dd9e56f1b8568596ec Mon Sep 17 00:00:00 2001
+From: bobcanthelpyou <bobcanthelpyou@users.noreply.github.com>
+Date: Sun, 10 Mar 2019 20:15:25 +0100
+Subject: [PATCH] docs: fix typos and common misspellings (#1668)
+
+(cherry picked from commit 170c494f409df37459d9aa9d5af8bc675b7f9d4a)
+---
+ docs/dev/basics.rst                              |  4 ++--
+ docs/dev/hardware.rst                            |  2 +-
+ docs/dev/packages.rst                            |  2 +-
+ docs/dev/web/config-mode.rst                     |  2 +-
+ docs/dev/web/model.rst                           |  4 ++--
+ docs/features/monitoring.rst                     |  4 ++--
+ docs/features/multidomain.rst                    |  4 ++--
+ docs/features/private-wlan.rst                   |  2 +-
+ docs/features/wired-mesh.rst                     |  2 +-
+ docs/index.rst                                   |  4 ++--
+ docs/package/gluon-config-mode-domain-select.rst |  2 +-
+ docs/package/gluon-radv-filterd.rst              |  2 +-
+ docs/package/gluon-scheduled-domain-switch.rst   |  2 +-
+ docs/package/gluon-web-admin.rst                 |  2 +-
+ docs/releases/v2014.3.rst                        |  4 ++--
+ docs/releases/v2014.4.rst                        |  2 +-
+ docs/releases/v2015.1.2.rst                      |  2 +-
+ docs/releases/v2015.1.rst                        |  6 +++---
+ docs/releases/v2016.1.1.rst                      | 10 +++++-----
+ docs/releases/v2016.1.2.rst                      |  2 +-
+ docs/releases/v2016.1.3.rst                      |  2 +-
+ docs/releases/v2016.1.4.rst                      |  2 +-
+ docs/releases/v2016.1.5.rst                      |  2 +-
+ docs/releases/v2016.1.6.rst                      |  2 +-
+ docs/releases/v2016.1.rst                        |  4 ++--
+ docs/releases/v2016.2.1.rst                      |  2 +-
+ docs/releases/v2016.2.2.rst                      |  2 +-
+ docs/releases/v2016.2.3.rst                      |  2 +-
+ docs/releases/v2016.2.4.rst                      |  2 +-
+ docs/releases/v2016.2.5.rst                      |  2 +-
+ docs/releases/v2016.2.6.rst                      |  2 +-
+ docs/releases/v2016.2.7.rst                      |  2 +-
+ docs/releases/v2016.2.rst                        |  2 +-
+ docs/releases/v2017.1.1.rst                      |  2 +-
+ docs/releases/v2017.1.2.rst                      |  2 +-
+ docs/releases/v2017.1.3.rst                      |  4 ++--
+ docs/releases/v2017.1.4.rst                      |  2 +-
+ docs/releases/v2017.1.5.rst                      |  2 +-
+ docs/releases/v2017.1.6.rst                      |  2 +-
+ docs/releases/v2017.1.7.rst                      |  2 +-
+ docs/releases/v2017.1.8.rst                      |  4 ++--
+ docs/releases/v2017.1.rst                        |  4 ++--
+ docs/releases/v2018.1.1.rst                      |  2 +-
+ docs/releases/v2018.1.2.rst                      |  2 +-
+ docs/releases/v2018.1.3.rst                      |  2 +-
+ docs/releases/v2018.1.4.rst                      |  4 ++--
+ docs/releases/v2018.1.rst                        |  6 +++---
+ docs/releases/v2018.2.rst                        |  2 +-
+ docs/user/faq.rst                                |  4 ++--
+ docs/user/getting_started.rst                    |  2 +-
+ docs/user/site.rst                               |  8 ++++----
+ 51 files changed, 74 insertions(+), 74 deletions(-)
+
+diff --git a/docs/dev/basics.rst b/docs/dev/basics.rst
+index 177ccfe7..7fcc2d7c 100644
+--- a/docs/dev/basics.rst
++++ b/docs/dev/basics.rst
+@@ -36,9 +36,9 @@ rerun
+ 
+ `make update` also applies the patches that can be found in the directories found in
+ `patches`; the resulting branch will be called `patched`, while the commit specified in `modules`
+-can be refered to by the branch `base`.
++can be referred to by the branch `base`.
+ 
+-After new patches have been commited on top of the `patched` branch (or existing commits
++After new patches have been committed on top of the `patched` branch (or existing commits
+ since the base commit have been edited or removed), the patch directories can be regenerated
+ using
+ 
+diff --git a/docs/dev/hardware.rst b/docs/dev/hardware.rst
+index 4985fa44..dae2bbb3 100644
+--- a/docs/dev/hardware.rst
++++ b/docs/dev/hardware.rst
+@@ -99,7 +99,7 @@ target supports *per-default rootfs*).
+ Configuration
+ '''''''''''''
+ 
+-The ``config`` command allows to add arbitary target-specific OpenWrt configuration
++The ``config`` command allows to add arbitrary target-specific OpenWrt configuration
+ to be emitted to ``.config``.
+ 
+ Notes
+diff --git a/docs/dev/packages.rst b/docs/dev/packages.rst
+index f89e83d4..42173cec 100644
+--- a/docs/dev/packages.rst
++++ b/docs/dev/packages.rst
+@@ -74,7 +74,7 @@ Feature flags provide a convenient way to define package selections without
+ making it necessary to list each package explicitly.
+ 
+ The main feature flag definition file is ``package/features``, but each package
+-feed can provide additional defintions in a file called ``features`` at the root
++feed can provide additional definitions in a file called ``features`` at the root
+ of the feed repository.
+ 
+ Each flag *$flag* without any explicit definition will simply include the package
+diff --git a/docs/dev/web/config-mode.rst b/docs/dev/web/config-mode.rst
+index 9c0c2430..9c708fb9 100644
+--- a/docs/dev/web/config-mode.rst
++++ b/docs/dev/web/config-mode.rst
+@@ -2,7 +2,7 @@ Config Mode
+ ===========
+ 
+ The `Config Mode` consists of several modules that provide a range of different
+-condiguration options:
++configuration options:
+ 
+ gluon-config-mode-core
+     This modules provides the core functionality for the config mode.
+diff --git a/docs/dev/web/model.rst b/docs/dev/web/model.rst
+index bc933e75..d5335690 100644
+--- a/docs/dev/web/model.rst
++++ b/docs/dev/web/model.rst
+@@ -51,14 +51,14 @@ Classes and methods
+ 
+     - *Form:write* ()
+ 
+-      Is called after the form has beed submitted (but only if the data is valid). It
++      Is called after the form has been submitted (but only if the data is valid). It
+       is called last (after all options' *write* methods) and is usually used
+       to commit changed UCI packages.
+ 
+       The default implementation of *write* doesn't do anything, but it can be
+       overridden.
+ 
+-  - *Section* (usually instanciated through *Form:section*)
++  - *Section* (usually instantiated through *Form:section*)
+ 
+     - *Section:option* (*type*, *id*, *title*, *description*)
+ 
+diff --git a/docs/features/monitoring.rst b/docs/features/monitoring.rst
+index d5c3372a..5b10b9e0 100644
+--- a/docs/features/monitoring.rst
++++ b/docs/features/monitoring.rst
+@@ -24,7 +24,7 @@ Information to be announced is currently split into three categories:
+     interfaces. This data can be used to determine the network topology.
+ 
+ All categories will have a ``node_id`` key. It should be used to
+-relate data of different catagories.
++relate data of different categories.
+ 
+ Accessing Node Information
+ --------------------------
+@@ -117,7 +117,7 @@ The supported requests are:
+ gluon-neighbour-info
+ ~~~~~~~~~~~~~~~~~~~~
+ 
+-The programm `gluon-neighbour-info` can be used to retrieve
++The program `gluon-neighbour-info` can be used to retrieve
+ information from other nodes.
+ 
+ ::
+diff --git a/docs/features/multidomain.rst b/docs/features/multidomain.rst
+index 825b37a3..89a0a8df 100644
+--- a/docs/features/multidomain.rst
++++ b/docs/features/multidomain.rst
+@@ -193,8 +193,8 @@ domain.conf only variables
+    -  prefix4
+    -  extra_prefixes6
+ 
+--  To prevent accidential bridging of different domains, all meshing
+-   technologies should be seperated:
++-  To prevent accidental bridging of different domains, all meshing
++   technologies should be separated:
+ 
+    -  domain_seed (wired mesh)
+ 
+diff --git a/docs/features/private-wlan.rst b/docs/features/private-wlan.rst
+index 57b18fdd..68fe3b87 100644
+--- a/docs/features/private-wlan.rst
++++ b/docs/features/private-wlan.rst
+@@ -1,7 +1,7 @@
+ Private WLAN
+ ============
+ 
+-It is possible to set up a private WLAN that bridges the WAN port and is seperated from the mesh network.
++It is possible to set up a private WLAN that bridges the WAN port and is separated from the mesh network.
+ Please note that you should not enable ``mesh_on_wan`` simultaneously.
+ 
+ The private WLAN can be enabled through the config mode if the package ``gluon-web-private-wifi`` is installed.
+diff --git a/docs/features/wired-mesh.rst b/docs/features/wired-mesh.rst
+index efa1977a..7f99c3c0 100644
+--- a/docs/features/wired-mesh.rst
++++ b/docs/features/wired-mesh.rst
+@@ -20,7 +20,7 @@ Wired mesh encapsulation
+ 
+ Since version 2018.1, Gluon supports encapsulating wired mesh traffic in
+ `VXLAN <https://en.wikipedia.org/wiki/Virtual_Extensible_LAN>`_, a new standard with
+-usecases similar to VLANs, but a much greater ID space of 24bit; in addition, VXLAN
++use cases similar to VLANs, but a much greater ID space of 24bit; in addition, VXLAN
+ packets pass through VLAN-aware switches without any special configuration.
+ 
+ Encapsulating mesh traffic has two advantages:
+diff --git a/docs/index.rst b/docs/index.rst
+index bbb3296a..03934b79 100644
+--- a/docs/index.rst
++++ b/docs/index.rst
+@@ -1,8 +1,8 @@
+ Welcome to Gluon
+ ================
+ 
+-Gluon is a modular framework for creating OpenWrt-based firmwares for wireless mesh nodes.
+-Several Freifunk communities in Germany use Gluon as the foundation of their Freifunk firmwares.
++Gluon is a modular framework for creating OpenWrt-based firmware images for wireless mesh nodes.
++Several Freifunk communities in Germany use Gluon as the foundation of their Freifunk firmware.
+ 
+ 
+ .. toctree::
+diff --git a/docs/package/gluon-config-mode-domain-select.rst b/docs/package/gluon-config-mode-domain-select.rst
+index 4ca12217..41646e00 100644
+--- a/docs/package/gluon-config-mode-domain-select.rst
++++ b/docs/package/gluon-config-mode-domain-select.rst
+@@ -5,7 +5,7 @@ the node will be placed in. If the selection has changed the upgrade scripts in
+ ``/lib/gluon/upgrade/`` are triggered to update the nodes configuration.
+ 
+ Hiding domains could be useful for default or testing domains, which should not
+-be accidentally selected by a node operater.
++be accidentally selected by a node operator.
+ 
+ domains/\*.conf
+ ---------------
+diff --git a/docs/package/gluon-radv-filterd.rst b/docs/package/gluon-radv-filterd.rst
+index 88949611..509599d0 100644
+--- a/docs/package/gluon-radv-filterd.rst
++++ b/docs/package/gluon-radv-filterd.rst
+@@ -11,7 +11,7 @@ Selected router
+ ---------------
+ 
+ The router selection mechanism is independent from the batman-adv gateway mode.
+-In contrast, the device originating the router advertisment could be any router
++In contrast, the device originating the router advertisement could be any router
+ or client connected to the mesh, as radv-filterd captures all router
+ advertisements originating  from it. All nodes announcing router advertisement
+ **with** a default lifetime greater than 0 are being considered as candidates.
+diff --git a/docs/package/gluon-scheduled-domain-switch.rst b/docs/package/gluon-scheduled-domain-switch.rst
+index aeb0d967..2cef8e4c 100644
+--- a/docs/package/gluon-scheduled-domain-switch.rst
++++ b/docs/package/gluon-scheduled-domain-switch.rst
+@@ -6,7 +6,7 @@ in time. This is needed for switching between incompatible transport
+ protocols (e.g. 802.11s and IBSS or VXLAN).
+ 
+ Nodes will switch when the defined *switch-time* has passed. In case the node was
+-powered off while this was supposed to happen, it might not be able to aquire the
++powered off while this was supposed to happen, it might not be able to acquire the
+ correct time. In this case, the node will switch after it has not seen any gateway
+ for a given period of time.
+ 
+diff --git a/docs/package/gluon-web-admin.rst b/docs/package/gluon-web-admin.rst
+index efdab02f..95affa0b 100644
+--- a/docs/package/gluon-web-admin.rst
++++ b/docs/package/gluon-web-admin.rst
+@@ -3,7 +3,7 @@ gluon-web-admin
+ 
+ This package allows the user to set options like the password for ssh access
+ within config mode. You can define in your ``site.conf`` whether it should be
+-possible to access the nodes via ssh with a password or not and what the mimimum
++possible to access the nodes via ssh with a password or not and what the minimum
+ password length must be.
+ 
+ site.conf
+diff --git a/docs/releases/v2014.3.rst b/docs/releases/v2014.3.rst
+index 7fd5d089..8117c5be 100644
+--- a/docs/releases/v2014.3.rst
++++ b/docs/releases/v2014.3.rst
+@@ -31,7 +31,7 @@ and slowly increase to 1 until ``PRIORITY`` days have passed. From then, the pro
+ be configured in ``site.conf``. If the autoupdater is unable to determine the correct time, it will fall back to
+ a behavior similar to the old implementation (i.e. hourly update attempts).
+ 
+-Seperation of announced data
++Separation of announced data
+ ----------------------------
+ The data announced by alfred has been split into two data types:
+ 
+@@ -73,7 +73,7 @@ which allows simple configuration of batman-adv on the WAN interface.
+ 
+ Site validators
+ ---------------
+-The content of the ``site.conf`` is now validated when the images are built to make it less likely to accidentially
++The content of the ``site.conf`` is now validated when the images are built to make it less likely to accidentally
+ build broken images.
+ 
+ gluon-firewall
+diff --git a/docs/releases/v2014.4.rst b/docs/releases/v2014.4.rst
+index f05e06a6..95937d32 100644
+--- a/docs/releases/v2014.4.rst
++++ b/docs/releases/v2014.4.rst
+@@ -43,7 +43,7 @@ See the *Site changes* section for details.
+ 
+ Experimental support for batman-adv compat 15
+ ---------------------------------------------
+-As batman-adv has broken compatiblity starting with batman-adv 2014.0
++As batman-adv has broken compatibility starting with batman-adv 2014.0
+ (bumping the "compat level" to 15), Gluon users must decide which
+ batman-adv version to use. The package for the old batman-adv version
+ ``gluon-mesh-batman-adv`` has been renamed to ``gluon-mesh-batman-adv-14``,
+diff --git a/docs/releases/v2015.1.2.rst b/docs/releases/v2015.1.2.rst
+index 97b97b35..0cedd5b4 100644
+--- a/docs/releases/v2015.1.2.rst
++++ b/docs/releases/v2015.1.2.rst
+@@ -24,7 +24,7 @@ Bugfixes
+ ~~~~~~~~
+ 
+ * Fix download of OpenSSL during build because of broken OpenSSL download servers (again...)
+-* Fix another ABI incompatiblity with the upstream kernel modules which prevented loading some filesystem-related modules
++* Fix another ABI incompatibility with the upstream kernel modules which prevented loading some filesystem-related modules
+ * Fix potential MAC address conflicts on x86 target when using mesh-on-wan/lan
+ * Fix signal strength indicators on TP-LINK CPE210/510
+ * Fix the model name string on some NETGEAR WNDR3700v2
+diff --git a/docs/releases/v2015.1.rst b/docs/releases/v2015.1.rst
+index 8e5c8e99..1e6d3396 100644
+--- a/docs/releases/v2015.1.rst
++++ b/docs/releases/v2015.1.rst
+@@ -82,7 +82,7 @@ All config and expert mode modules contain both English and German texts now. Th
+ locale should always be enabled in ``site.mk`` (as English is the fallback language),
+ German can be enabled in addition using the ``GLUON_LANGS`` setting.
+ 
+-The language shown is autmatically determined from the headers sent by the user's
++The language shown is automatically determined from the headers sent by the user's
+ browser.
+ 
+ Mesh-on-LAN
+@@ -106,7 +106,7 @@ the WLAN adapters' transmission power can be changed in this package.
+ fastd "performance mode"
+ ^^^^^^^^^^^^^^^^^^^^^^^^
+ The new package `gluon-luci-mesh-vpn-fastd` allows the user to switch between the `security` and
+-`performance` VPN settions. In `performance mode`, the method `null` will be prepended to the
++`performance` VPN sections. In `performance mode`, the method `null` will be prepended to the
+ method list.
+ 
+ The new option ``configurable`` in the ``fastd_mesh_vpn`` section of ``site.conf`` must be set to `true`
+@@ -131,7 +131,7 @@ ffmap backend has been adjusted accordingly.
+ Nested peer groups
+ ^^^^^^^^^^^^^^^^^^
+ Nested peer groups for the `fastd-mesh-vpn-fastd` package can now be configured in ``site.conf``,
+-each with its own peer limit. This allows to add additional constaints, for example to connect
++each with its own peer limit. This allows to add additional constraints, for example to connect
+ to 2 peers altogether, but only 1 peer in each data center.
+ 
+ Autoupdater manual branch override
+diff --git a/docs/releases/v2016.1.1.rst b/docs/releases/v2016.1.1.rst
+index 59ca2504..eb7ea0ee 100644
+--- a/docs/releases/v2016.1.1.rst
++++ b/docs/releases/v2016.1.1.rst
+@@ -19,8 +19,8 @@ Build
+ 
+ Don't overwrite the opkg repository key on each build.
+ 
+-AirOS 5.6.x compatiblity
+-^^^^^^^^^^^^^^^^^^^^^^^^
++AirOS 5.6.x compatibility
++^^^^^^^^^^^^^^^^^^^^^^^^^
+ 
+ Downgrading to AirOS 5.5.x before flashing Gluon on Airmax M XM/XW devices
+ (NanoStation, Bullet, ...) is not necessary anymore.
+@@ -28,9 +28,9 @@ Downgrading to AirOS 5.5.x before flashing Gluon on Airmax M XM/XW devices
+ Status page
+ ^^^^^^^^^^^
+ 
+-* Fix purging of disappered neighbours from the list
++* Fix purging of disappeared neighbours from the list
+ * Don't clear the signal graphs when scrolling in mobile browsers
+-* Improve browser compability (don't assume the Internationalization API is available,
++* Improve browser compatibility (don't assume the Internationalization API is available,
+   fixes the display of numbers in Firefox for Android)
+ 
+ Config mode
+@@ -53,7 +53,7 @@ Known Issues
+ 
+ * The MAC address of the WAN interface is modified even when Mesh-on-WAN is disabled (`#496 <https://github.com/freifunk-gluon/gluon/issues/496>`_)
+ 
+-  This may lead to issues in environments where a fixed MAC address is expected (like VMware when promicious mode is disallowed).
++  This may lead to issues in environments where a fixed MAC address is expected (like VMware when promiscuous mode is disallowed).
+ 
+ * Inconsistent respondd/announced API (`#522 <https://github.com/freifunk-gluon/gluon/issues/522>`_)
+ 
+diff --git a/docs/releases/v2016.1.2.rst b/docs/releases/v2016.1.2.rst
+index 77f7efb8..680c432e 100644
+--- a/docs/releases/v2016.1.2.rst
++++ b/docs/releases/v2016.1.2.rst
+@@ -22,7 +22,7 @@ Known Issues
+ 
+ * The MAC address of the WAN interface is modified even when Mesh-on-WAN is disabled (`#496 <https://github.com/freifunk-gluon/gluon/issues/496>`_)
+ 
+-  This may lead to issues in environments where a fixed MAC address is expected (like VMware when promicious mode is disallowed).
++  This may lead to issues in environments where a fixed MAC address is expected (like VMware when promiscuous mode is disallowed).
+ 
+ * Inconsistent respondd API (`#522 <https://github.com/freifunk-gluon/gluon/issues/522>`_)
+ 
+diff --git a/docs/releases/v2016.1.3.rst b/docs/releases/v2016.1.3.rst
+index ba5b9672..2b9294a1 100644
+--- a/docs/releases/v2016.1.3.rst
++++ b/docs/releases/v2016.1.3.rst
+@@ -27,7 +27,7 @@ Known Issues
+ 
+ * The MAC address of the WAN interface is modified even when Mesh-on-WAN is disabled (`#496 <https://github.com/freifunk-gluon/gluon/issues/496>`_)
+ 
+-  This may lead to issues in environments where a fixed MAC address is expected (like VMware when promicious mode is disallowed).
++  This may lead to issues in environments where a fixed MAC address is expected (like VMware when promiscuous mode is disallowed).
+ 
+ * Inconsistent respondd API (`#522 <https://github.com/freifunk-gluon/gluon/issues/522>`_)
+ 
+diff --git a/docs/releases/v2016.1.4.rst b/docs/releases/v2016.1.4.rst
+index 0d8d2019..78efd11b 100644
+--- a/docs/releases/v2016.1.4.rst
++++ b/docs/releases/v2016.1.4.rst
+@@ -30,7 +30,7 @@ Known Issues
+ 
+ * The MAC address of the WAN interface is modified even when Mesh-on-WAN is disabled (`#496 <https://github.com/freifunk-gluon/gluon/issues/496>`_)
+ 
+-  This may lead to issues in environments where a fixed MAC address is expected (like VMware when promicious mode is disallowed).
++  This may lead to issues in environments where a fixed MAC address is expected (like VMware when promiscuous mode is disallowed).
+ 
+ * Inconsistent respondd API (`#522 <https://github.com/freifunk-gluon/gluon/issues/522>`_)
+ 
+diff --git a/docs/releases/v2016.1.5.rst b/docs/releases/v2016.1.5.rst
+index e5ee1a00..142be29e 100644
+--- a/docs/releases/v2016.1.5.rst
++++ b/docs/releases/v2016.1.5.rst
+@@ -59,7 +59,7 @@ Known Issues
+ 
+ * The MAC address of the WAN interface is modified even when Mesh-on-WAN is disabled (`#496 <https://github.com/freifunk-gluon/gluon/issues/496>`_)
+ 
+-  This may lead to issues in environments where a fixed MAC address is expected (like VMware when promicious mode is disallowed).
++  This may lead to issues in environments where a fixed MAC address is expected (like VMware when promiscuous mode is disallowed).
+ 
+ * Inconsistent respondd API (`#522 <https://github.com/freifunk-gluon/gluon/issues/522>`_)
+ 
+diff --git a/docs/releases/v2016.1.6.rst b/docs/releases/v2016.1.6.rst
+index e9f97838..361ee797 100644
+--- a/docs/releases/v2016.1.6.rst
++++ b/docs/releases/v2016.1.6.rst
+@@ -48,7 +48,7 @@ Known Issues
+ 
+ * The MAC address of the WAN interface is modified even when Mesh-on-WAN is disabled (`#496 <https://github.com/freifunk-gluon/gluon/issues/496>`_)
+ 
+-  This may lead to issues in environments where a fixed MAC address is expected (like VMware when promicious mode is disallowed).
++  This may lead to issues in environments where a fixed MAC address is expected (like VMware when promiscuous mode is disallowed).
+ 
+ * Inconsistent respondd API (`#522 <https://github.com/freifunk-gluon/gluon/issues/522>`_)
+ 
+diff --git a/docs/releases/v2016.1.rst b/docs/releases/v2016.1.rst
+index 94229c5a..d9ac5957 100644
+--- a/docs/releases/v2016.1.rst
++++ b/docs/releases/v2016.1.rst
+@@ -54,7 +54,7 @@ New features
+ Kernel module opkg repository
+ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ 
+-We've not been able to keep ABI compatiblity with the kernel of the official OpenWrt images.
++We've not been able to keep ABI compatibility with the kernel of the official OpenWrt images.
+ Therefore, Gluon now generates an opkg repository with modules itself.
+ 
+ The repository can be found at `output/modules/` by default, the image output directory has
+@@ -269,7 +269,7 @@ Known Issues
+ * batman-adv causes stability issues for both alfred and respondd/announced (`#177 <https://github.com/freifunk-gluon/gluon/issues/177>`_)
+ * The MAC address of the WAN interface is modified even when Mesh-on-WAN is disabled (`#496 <https://github.com/freifunk-gluon/gluon/issues/496>`_)
+ 
+-  This may lead to issues in environments where a fixed MAC address is expected (like VMware when promicious mode is disallowed).
++  This may lead to issues in environments where a fixed MAC address is expected (like VMware when promiscuous mode is disallowed).
+ 
+ * Inconsistent respondd/announced API (`#522 <https://github.com/freifunk-gluon/gluon/issues/522>`_)
+ 
+diff --git a/docs/releases/v2016.2.1.rst b/docs/releases/v2016.2.1.rst
+index 2f71205c..0aeba8f4 100644
+--- a/docs/releases/v2016.2.1.rst
++++ b/docs/releases/v2016.2.1.rst
+@@ -45,7 +45,7 @@ Known Issues
+ 
+ * The MAC address of the WAN interface is modified even when Mesh-on-WAN is disabled (`#496 <https://github.com/freifunk-gluon/gluon/issues/496>`_)
+ 
+-  This may lead to issues in environments where a fixed MAC address is expected (like VMware when promicious mode is disallowed).
++  This may lead to issues in environments where a fixed MAC address is expected (like VMware when promiscuous mode is disallowed).
+ 
+ * Inconsistent respondd API (`#522 <https://github.com/freifunk-gluon/gluon/issues/522>`_)
+ 
+diff --git a/docs/releases/v2016.2.2.rst b/docs/releases/v2016.2.2.rst
+index fe054f54..781d0335 100644
+--- a/docs/releases/v2016.2.2.rst
++++ b/docs/releases/v2016.2.2.rst
+@@ -71,7 +71,7 @@ Known Issues
+ 
+ * The MAC address of the WAN interface is modified even when Mesh-on-WAN is disabled (`#496 <https://github.com/freifunk-gluon/gluon/issues/496>`_)
+ 
+-  This may lead to issues in environments where a fixed MAC address is expected (like VMware when promicious mode is disallowed).
++  This may lead to issues in environments where a fixed MAC address is expected (like VMware when promiscuous mode is disallowed).
+ 
+ * Inconsistent respondd API (`#522 <https://github.com/freifunk-gluon/gluon/issues/522>`_)
+ 
+diff --git a/docs/releases/v2016.2.3.rst b/docs/releases/v2016.2.3.rst
+index dacd5cd2..13436bf4 100644
+--- a/docs/releases/v2016.2.3.rst
++++ b/docs/releases/v2016.2.3.rst
+@@ -55,7 +55,7 @@ Known Issues
+ 
+ * The MAC address of the WAN interface is modified even when Mesh-on-WAN is disabled (`#496 <https://github.com/freifunk-gluon/gluon/issues/496>`_)
+ 
+-  This may lead to issues in environments where a fixed MAC address is expected (like VMware when promicious mode is disallowed).
++  This may lead to issues in environments where a fixed MAC address is expected (like VMware when promiscuous mode is disallowed).
+ 
+ * Inconsistent respondd API (`#522 <https://github.com/freifunk-gluon/gluon/issues/522>`_)
+ 
+diff --git a/docs/releases/v2016.2.4.rst b/docs/releases/v2016.2.4.rst
+index 4fb06026..0ca46512 100644
+--- a/docs/releases/v2016.2.4.rst
++++ b/docs/releases/v2016.2.4.rst
+@@ -48,7 +48,7 @@ Known Issues
+ 
+ * The MAC address of the WAN interface is modified even when Mesh-on-WAN is disabled (`#496 <https://github.com/freifunk-gluon/gluon/issues/496>`_)
+ 
+-  This may lead to issues in environments where a fixed MAC address is expected (like VMware when promicious mode is disallowed).
++  This may lead to issues in environments where a fixed MAC address is expected (like VMware when promiscuous mode is disallowed).
+ 
+ * Inconsistent respondd API (`#522 <https://github.com/freifunk-gluon/gluon/issues/522>`_)
+ 
+diff --git a/docs/releases/v2016.2.5.rst b/docs/releases/v2016.2.5.rst
+index 07a27f0c..34ecc09d 100644
+--- a/docs/releases/v2016.2.5.rst
++++ b/docs/releases/v2016.2.5.rst
+@@ -29,7 +29,7 @@ Known Issues
+ 
+ * The MAC address of the WAN interface is modified even when Mesh-on-WAN is disabled (`#496 <https://github.com/freifunk-gluon/gluon/issues/496>`_)
+ 
+-  This may lead to issues in environments where a fixed MAC address is expected (like VMware when promicious mode is disallowed).
++  This may lead to issues in environments where a fixed MAC address is expected (like VMware when promiscuous mode is disallowed).
+ 
+ * Inconsistent respondd API (`#522 <https://github.com/freifunk-gluon/gluon/issues/522>`_)
+ 
+diff --git a/docs/releases/v2016.2.6.rst b/docs/releases/v2016.2.6.rst
+index 5acabf7b..0a2ab777 100644
+--- a/docs/releases/v2016.2.6.rst
++++ b/docs/releases/v2016.2.6.rst
+@@ -50,7 +50,7 @@ Known Issues
+ 
+ * The MAC address of the WAN interface is modified even when Mesh-on-WAN is disabled (`#496 <https://github.com/freifunk-gluon/gluon/issues/496>`_)
+ 
+-  This may lead to issues in environments where a fixed MAC address is expected (like VMware when promicious mode is disallowed).
++  This may lead to issues in environments where a fixed MAC address is expected (like VMware when promiscuous mode is disallowed).
+ 
+ * Inconsistent respondd API (`#522 <https://github.com/freifunk-gluon/gluon/issues/522>`_)
+ 
+diff --git a/docs/releases/v2016.2.7.rst b/docs/releases/v2016.2.7.rst
+index 88e809ab..55d6c016 100644
+--- a/docs/releases/v2016.2.7.rst
++++ b/docs/releases/v2016.2.7.rst
+@@ -24,7 +24,7 @@ Known Issues
+ 
+ * The MAC address of the WAN interface is modified even when Mesh-on-WAN is disabled (`#496 <https://github.com/freifunk-gluon/gluon/issues/496>`_)
+ 
+-  This may lead to issues in environments where a fixed MAC address is expected (like VMware when promicious mode is disallowed).
++  This may lead to issues in environments where a fixed MAC address is expected (like VMware when promiscuous mode is disallowed).
+ 
+ * Inconsistent respondd API (`#522 <https://github.com/freifunk-gluon/gluon/issues/522>`_)
+ 
+diff --git a/docs/releases/v2016.2.rst b/docs/releases/v2016.2.rst
+index 5a7c1581..5549ee2d 100644
+--- a/docs/releases/v2016.2.rst
++++ b/docs/releases/v2016.2.rst
+@@ -172,7 +172,7 @@ Known Issues
+ 
+ * The MAC address of the WAN interface is modified even when Mesh-on-WAN is disabled (`#496 <https://github.com/freifunk-gluon/gluon/issues/496>`_)
+ 
+-  This may lead to issues in environments where a fixed MAC address is expected (like VMware when promicious mode is disallowed).
++  This may lead to issues in environments where a fixed MAC address is expected (like VMware when promiscuous mode is disallowed).
+ 
+ * Inconsistent respondd API (`#522 <https://github.com/freifunk-gluon/gluon/issues/522>`_)
+ 
+diff --git a/docs/releases/v2017.1.1.rst b/docs/releases/v2017.1.1.rst
+index 7a3cf653..78a3e0a7 100644
+--- a/docs/releases/v2017.1.1.rst
++++ b/docs/releases/v2017.1.1.rst
+@@ -34,7 +34,7 @@ Known issues
+ 
+ * The MAC address of the WAN interface is modified even when Mesh-on-WAN is disabled (`#496 <https://github.com/freifunk-gluon/gluon/issues/496>`_)
+ 
+-  This may lead to issues in environments where a fixed MAC address is expected (like VMware when promicious mode is disallowed).
++  This may lead to issues in environments where a fixed MAC address is expected (like VMware when promiscuous mode is disallowed).
+ 
+ * Inconsistent respondd API (`#522 <https://github.com/freifunk-gluon/gluon/issues/522>`_)
+ 
+diff --git a/docs/releases/v2017.1.2.rst b/docs/releases/v2017.1.2.rst
+index aa3e8d3e..8090942c 100644
+--- a/docs/releases/v2017.1.2.rst
++++ b/docs/releases/v2017.1.2.rst
+@@ -71,7 +71,7 @@ Known issues
+ 
+ * The MAC address of the WAN interface is modified even when Mesh-on-WAN is disabled (`#496 <https://github.com/freifunk-gluon/gluon/issues/496>`_)
+ 
+-  This may lead to issues in environments where a fixed MAC address is expected (like VMware when promicious mode is disallowed).
++  This may lead to issues in environments where a fixed MAC address is expected (like VMware when promiscuous mode is disallowed).
+ 
+ * Inconsistent respondd API (`#522 <https://github.com/freifunk-gluon/gluon/issues/522>`_)
+ 
+diff --git a/docs/releases/v2017.1.3.rst b/docs/releases/v2017.1.3.rst
+index a63bd965..8d9f22c0 100644
+--- a/docs/releases/v2017.1.3.rst
++++ b/docs/releases/v2017.1.3.rst
+@@ -14,7 +14,7 @@ Bugfixes
+   CVE-2017-14492, CVE-2017-14493, CVE-2017-14494, 2017-CVE-14495 and
+   2017-CVE-14496
+ 
+-  While many of the most severe (remote code execution) vulnarabilities are in
++  While many of the most severe (remote code execution) vulnerabilities are in
+   the DHCP component of dnsmasq, which is not active on a Gluon node unless in
+   Config Mode, CVE-2017-14491 does affect us. An attacker can cause memory
+   corruption and possibly remote code execution by deploying a malicious DNS
+@@ -52,7 +52,7 @@ Known issues
+ 
+ * The MAC address of the WAN interface is modified even when Mesh-on-WAN is disabled (`#496 <https://github.com/freifunk-gluon/gluon/issues/496>`_)
+ 
+-  This may lead to issues in environments where a fixed MAC address is expected (like VMware when promicious mode is disallowed).
++  This may lead to issues in environments where a fixed MAC address is expected (like VMware when promiscuous mode is disallowed).
+ 
+ * Inconsistent respondd API (`#522 <https://github.com/freifunk-gluon/gluon/issues/522>`_)
+ 
+diff --git a/docs/releases/v2017.1.4.rst b/docs/releases/v2017.1.4.rst
+index d5b54c48..de294925 100644
+--- a/docs/releases/v2017.1.4.rst
++++ b/docs/releases/v2017.1.4.rst
+@@ -43,7 +43,7 @@ Known issues
+ 
+ * The MAC address of the WAN interface is modified even when Mesh-on-WAN is disabled (`#496 <https://github.com/freifunk-gluon/gluon/issues/496>`_)
+ 
+-  This may lead to issues in environments where a fixed MAC address is expected (like VMware when promicious mode is disallowed).
++  This may lead to issues in environments where a fixed MAC address is expected (like VMware when promiscuous mode is disallowed).
+ 
+ * Inconsistent respondd API (`#522 <https://github.com/freifunk-gluon/gluon/issues/522>`_)
+ 
+diff --git a/docs/releases/v2017.1.5.rst b/docs/releases/v2017.1.5.rst
+index 33455a8c..576237f5 100644
+--- a/docs/releases/v2017.1.5.rst
++++ b/docs/releases/v2017.1.5.rst
+@@ -41,7 +41,7 @@ Known issues
+ 
+ * The MAC address of the WAN interface is modified even when Mesh-on-WAN is disabled (`#496 <https://github.com/freifunk-gluon/gluon/issues/496>`_)
+ 
+-  This may lead to issues in environments where a fixed MAC address is expected (like VMware when promicious mode is disallowed).
++  This may lead to issues in environments where a fixed MAC address is expected (like VMware when promiscuous mode is disallowed).
+ 
+ * Inconsistent respondd API (`#522 <https://github.com/freifunk-gluon/gluon/issues/522>`_)
+ 
+diff --git a/docs/releases/v2017.1.6.rst b/docs/releases/v2017.1.6.rst
+index 2a05ebb8..4cd01f70 100644
+--- a/docs/releases/v2017.1.6.rst
++++ b/docs/releases/v2017.1.6.rst
+@@ -81,7 +81,7 @@ Known issues
+ 
+ * The MAC address of the WAN interface is modified even when Mesh-on-WAN is disabled (`#496 <https://github.com/freifunk-gluon/gluon/issues/496>`_)
+ 
+-  This may lead to issues in environments where a fixed MAC address is expected (like VMware when promicious mode is disallowed).
++  This may lead to issues in environments where a fixed MAC address is expected (like VMware when promiscuous mode is disallowed).
+ 
+ * Inconsistent respondd API (`#522 <https://github.com/freifunk-gluon/gluon/issues/522>`_)
+ 
+diff --git a/docs/releases/v2017.1.7.rst b/docs/releases/v2017.1.7.rst
+index b06cc7d4..7da0ac49 100644
+--- a/docs/releases/v2017.1.7.rst
++++ b/docs/releases/v2017.1.7.rst
+@@ -24,7 +24,7 @@ Known issues
+ 
+ * The MAC address of the WAN interface is modified even when Mesh-on-WAN is disabled (`#496 <https://github.com/freifunk-gluon/gluon/issues/496>`_)
+ 
+-  This may lead to issues in environments where a fixed MAC address is expected (like VMware when promicious mode is disallowed).
++  This may lead to issues in environments where a fixed MAC address is expected (like VMware when promiscuous mode is disallowed).
+ 
+ * Inconsistent respondd API (`#522 <https://github.com/freifunk-gluon/gluon/issues/522>`_)
+ 
+diff --git a/docs/releases/v2017.1.8.rst b/docs/releases/v2017.1.8.rst
+index b593305d..374ac63c 100644
+--- a/docs/releases/v2017.1.8.rst
++++ b/docs/releases/v2017.1.8.rst
+@@ -36,7 +36,7 @@ Bugfixes
+   and a number of other minor issues)
+ 
+   The listed bugs could lead to high rates of batman-adv management traffic
+-  (causing considerable load), trigger warnings about packet checksum failues
++  (causing considerable load), trigger warnings about packet checksum failures
+   in certain non-standard interface configurations, and possibly other issues.
+ 
+ 
+@@ -61,7 +61,7 @@ Known issues
+ 
+ * The MAC address of the WAN interface is modified even when Mesh-on-WAN is disabled (`#496 <https://github.com/freifunk-gluon/gluon/issues/496>`_)
+ 
+-  This may lead to issues in environments where a fixed MAC address is expected (like VMware when promicious mode is disallowed).
++  This may lead to issues in environments where a fixed MAC address is expected (like VMware when promiscuous mode is disallowed).
+ 
+ * Inconsistent respondd API (`#522 <https://github.com/freifunk-gluon/gluon/issues/522>`_)
+ 
+diff --git a/docs/releases/v2017.1.rst b/docs/releases/v2017.1.rst
+index 0a78be8e..9e8e72c9 100644
+--- a/docs/releases/v2017.1.rst
++++ b/docs/releases/v2017.1.rst
+@@ -71,7 +71,7 @@ x86-generic
+ ^^^^^^^^^^^
+ 
+ The *x86-kvm* and *x86-xen_domu* targets have been removed; the *x86-generic*
+-images now support these usecases as well, so no separate targets are needed
++images now support these use cases as well, so no separate targets are needed
+ anymore.
+ 
+ x86-geode
+@@ -225,7 +225,7 @@ Known issues
+ 
+ * The MAC address of the WAN interface is modified even when Mesh-on-WAN is disabled (`#496 <https://github.com/freifunk-gluon/gluon/issues/496>`_)
+ 
+-  This may lead to issues in environments where a fixed MAC address is expected (like VMware when promicious mode is disallowed).
++  This may lead to issues in environments where a fixed MAC address is expected (like VMware when promiscuous mode is disallowed).
+ 
+ * Inconsistent respondd API (`#522 <https://github.com/freifunk-gluon/gluon/issues/522>`_)
+ 
+diff --git a/docs/releases/v2018.1.1.rst b/docs/releases/v2018.1.1.rst
+index 0b15aeaa..3da718c4 100644
+--- a/docs/releases/v2018.1.1.rst
++++ b/docs/releases/v2018.1.1.rst
+@@ -40,7 +40,7 @@ Known issues
+ 
+ * The MAC address of the WAN interface is modified even when Mesh-on-WAN is disabled (`#496 <https://github.com/freifunk-gluon/gluon/issues/496>`_)
+ 
+-  This may lead to issues in environments where a fixed MAC address is expected (like VMware when promicious mode is disallowed).
++  This may lead to issues in environments where a fixed MAC address is expected (like VMware when promiscuous mode is disallowed).
+ 
+ * Inconsistent respondd API (`#522 <https://github.com/freifunk-gluon/gluon/issues/522>`_)
+ 
+diff --git a/docs/releases/v2018.1.2.rst b/docs/releases/v2018.1.2.rst
+index 5e7c664c..b87a6dd4 100644
+--- a/docs/releases/v2018.1.2.rst
++++ b/docs/releases/v2018.1.2.rst
+@@ -46,7 +46,7 @@ Known issues
+ 
+ * The MAC address of the WAN interface is modified even when Mesh-on-WAN is disabled (`#496 <https://github.com/freifunk-gluon/gluon/issues/496>`_)
+ 
+-  This may lead to issues in environments where a fixed MAC address is expected (like VMware when promicious mode is disallowed).
++  This may lead to issues in environments where a fixed MAC address is expected (like VMware when promiscuous mode is disallowed).
+ 
+ * Inconsistent respondd API (`#522 <https://github.com/freifunk-gluon/gluon/issues/522>`_)
+ 
+diff --git a/docs/releases/v2018.1.3.rst b/docs/releases/v2018.1.3.rst
+index 1ba8d31a..f0b46cf8 100644
+--- a/docs/releases/v2018.1.3.rst
++++ b/docs/releases/v2018.1.3.rst
+@@ -17,7 +17,7 @@ Known issues
+ 
+ * The MAC address of the WAN interface is modified even when Mesh-on-WAN is disabled (`#496 <https://github.com/freifunk-gluon/gluon/issues/496>`_)
+ 
+-  This may lead to issues in environments where a fixed MAC address is expected (like VMware when promicious mode is disallowed).
++  This may lead to issues in environments where a fixed MAC address is expected (like VMware when promiscuous mode is disallowed).
+ 
+ * Inconsistent respondd API (`#522 <https://github.com/freifunk-gluon/gluon/issues/522>`_)
+ 
+diff --git a/docs/releases/v2018.1.4.rst b/docs/releases/v2018.1.4.rst
+index e9597288..01ce2527 100644
+--- a/docs/releases/v2018.1.4.rst
++++ b/docs/releases/v2018.1.4.rst
+@@ -18,7 +18,7 @@ Bugfixes
+ * Fix unintended difference between autoupdater version comparison and dpkg/opkg
+ 
+   Alphanumeric characters were considered less than end-of-string, when the
+-  intended bahaviour (as implemented by dpkg and opkg) is that only ``~`` is
++  intended behaviour (as implemented by dpkg and opkg) is that only ``~`` is
+   less than end-of-string. This broke relations like the following:
+ 
+   * ``1.0`` < ``1.0a``
+@@ -35,7 +35,7 @@ Known issues
+ 
+ * The MAC address of the WAN interface is modified even when Mesh-on-WAN is disabled (`#496 <https://github.com/freifunk-gluon/gluon/issues/496>`_)
+ 
+-  This may lead to issues in environments where a fixed MAC address is expected (like VMware when promicious mode is disallowed).
++  This may lead to issues in environments where a fixed MAC address is expected (like VMware when promiscuous mode is disallowed).
+ 
+ * Inconsistent respondd API (`#522 <https://github.com/freifunk-gluon/gluon/issues/522>`_)
+ 
+diff --git a/docs/releases/v2018.1.rst b/docs/releases/v2018.1.rst
+index 18613f42..3b6126f9 100644
+--- a/docs/releases/v2018.1.rst
++++ b/docs/releases/v2018.1.rst
+@@ -150,7 +150,7 @@ anymore.
+ Filtering IGMP/MLD queries directed towards the mesh ensures that each node becomes the multicast querier
+ for its own clients (unless there are other multicast-aware switches connected to the node), rather
+ than electing a single, basically arbitrary node in the mesh to become the querier. Overall,
+-this should significantly improve the reliablity of multicast in the mesh. This is especially
++this should significantly improve the reliability of multicast in the mesh. This is especially
+ important for IPv6, as the IPv6 Neighbour Discovery Protocol (NDP) is based on local multicast.
+ 
+ See also the documentation of the :ref:`site.conf mesh section <user-site-mesh>`.
+@@ -176,7 +176,7 @@ Public key in respondd data (optional)
+ ======================================
+ 
+ If desired, the fastd public key of a node can be included in the respondd nodeinfo data,
+-faciliating the correlations of VPN peers and nodes. As the VPN key is transmitted unencrypted
++facilitating the correlations of VPN peers and nodes. As the VPN key is transmitted unencrypted
+ in the fastd handshake, this would theoretically allow an ISP to determine which nodes
+ are operated behind which internet line. Therefore, this feature must be enabled explicitly
+ by setting *mesh_vpn.pubkey_privacy* to ``false`` in *site.conf*.
+@@ -389,7 +389,7 @@ Known issues
+ 
+ * The MAC address of the WAN interface is modified even when Mesh-on-WAN is disabled (`#496 <https://github.com/freifunk-gluon/gluon/issues/496>`_)
+ 
+-  This may lead to issues in environments where a fixed MAC address is expected (like VMware when promicious mode is disallowed).
++  This may lead to issues in environments where a fixed MAC address is expected (like VMware when promiscuous mode is disallowed).
+ 
+ * Inconsistent respondd API (`#522 <https://github.com/freifunk-gluon/gluon/issues/522>`_)
+ 
+diff --git a/docs/releases/v2018.2.rst b/docs/releases/v2018.2.rst
+index b6ce2a88..e365c953 100644
+--- a/docs/releases/v2018.2.rst
++++ b/docs/releases/v2018.2.rst
+@@ -152,7 +152,7 @@ Known issues
+   disabled (`#496 <https://github.com/freifunk-gluon/gluon/issues/496>`_)
+ 
+   This may lead to issues in environments where a fixed MAC address is expected
+-  (like VMware when promicious mode is disallowed).
++  (like VMware when promiscuous mode is disallowed).
+ 
+ * Inconsistent respondd API
+   (`#522 <https://github.com/freifunk-gluon/gluon/issues/522>`_)
+diff --git a/docs/user/faq.rst b/docs/user/faq.rst
+index 41e756e8..2c01814f 100644
+--- a/docs/user/faq.rst
++++ b/docs/user/faq.rst
+@@ -40,7 +40,7 @@ Consider these key values:
+ - Payload: Allow for the transport of IPv6 packets, by adhering to the minimum MTU
+   of 1280 Byte specified in RFC 2460
+   - and configure `MSS clamping`_ accordingly,
+-  - and announce your link MTU via Router Advertisments and DHCP
++  - and announce your link MTU via Router Advertisements and DHCP
+ 
+   .. _MSS clamping: https://www.tldp.org/HOWTO/Adv-Routing-HOWTO/lartc.cookbook.mtu-mss.html
+ 
+@@ -58,7 +58,7 @@ For reference, the complete MTU stack looks like this:
+ Minimum MTU
+ -----------
+ 
+-Calculcate the minimum transport MTU by adding the encapsulation overhead to the
++Calculate the minimum transport MTU by adding the encapsulation overhead to the
+ minimum payload MTU required. This is the lowest recommended value, since going
+ lower would cause unnecessary fragmentation for clients which respect the announced
+ link MTU.
+diff --git a/docs/user/getting_started.rst b/docs/user/getting_started.rst
+index 80568a42..ba1bf0be 100644
+--- a/docs/user/getting_started.rst
++++ b/docs/user/getting_started.rst
+@@ -172,7 +172,7 @@ GLUON_PRIORITY
+ GLUON_REGION
+   Some devices (at the moment the TP-Link Archer C7) contain a region code that restricts
+   firmware installations. Set GLUON_REGION to ``eu`` or ``us`` to make the resulting
+-  images installable from the respective stock firmwares.
++  images installable from the respective stock firmware.
+ 
+ GLUON_RELEASE
+   Firmware release number: This string is displayed in the config mode, announced
+diff --git a/docs/user/site.rst b/docs/user/site.rst
+index 50fe03b9..95ff562f 100644
+--- a/docs/user/site.rst
++++ b/docs/user/site.rst
+@@ -24,7 +24,7 @@ site_code
+ domain_seed
+     32 bytes of random data, encoded in hexadecimal, used to seed other random
+     values specific to the mesh domain. It must be the same for all nodes of one
+-    mesh, but should be different for firmwares that are not supposed to mesh with
++    mesh, but should be different for firmware that is not supposed to mesh with
+     each other.
+ 
+     The recommended way to generate a value for a new site is:
+@@ -152,7 +152,7 @@ wifi24 \: optional
+     don't want users to connect to this mesh-SSID, so use a cryptic id that no
+     one will accidentally mistake for the client WiFi.
+ 
+-    ``ibss`` requires two parametersr: ``ssid`` (a string) and ``bssid`` (a MAC).
++    ``ibss`` requires two parameters: ``ssid`` (a string) and ``bssid`` (a MAC).
+     An optional parameter ``vlan`` (integer) is supported.
+ 
+     Both ``mesh`` and ``ibss`` accept an optional ``mcast_rate`` (kbit/s) parameter for
+@@ -247,7 +247,7 @@ mesh
+       throughput is at least 1500 kbit/s faster than the throughput of the
+       currently selected gateway. 
+ 
+-    For details on determining the threshhold, when to switch to a new gateway,
++    For details on determining the threshold, when to switch to a new gateway,
+     see `batctl manpage`_, section "gw_mode".
+     
+     .. _batctl manpage: https://www.open-mesh.org/projects/batman-adv/wiki/Gateways
+@@ -546,7 +546,7 @@ Feature flags
+ 
+ With the addition of more and more features that interact in complex ways, it
+ has become necessary to split certain packages into multiple parts, so it is
+-possible to install just what is needed for a specific usecase. One example
++possible to install just what is needed for a specific use case. One example
+ is the package *gluon-status-page-mesh-batman-adv*: There are batman-adv-specific
+ status page components; they should only be installed when both batman-adv and
+ the status page are enabled, making the addition of a specific package for this
+-- 
+2.17.1
+

@@ -1,0 +1,37 @@
+From f63f97aa11b6c881f928417e0788048e1c0f9a76 Mon Sep 17 00:00:00 2001
+From: Martin Weinelt <martin@darmstadt.freifunk.net>
+Date: Mon, 25 Feb 2019 14:44:01 +0100
+Subject: [PATCH] modules: update OpenWrt
+
+1be6ff6dc0 kernel: bump 4.14 to 4.14.102
+e9cb40caa4 kernel: bump 4.9 to 4.9.159
+d32bbd7477 mac80211: brcmfmac: backport 5.0 & 5.1 important changes/fixes
+ce3a53c4f6 dnsmasq: prefer localuse over resolvfile guesswork
+87fb8aea87 dnsmasq: allow using dnsmasq as the sole resolver
+405840631c build: Accept BIN_DIR parameter for legacy-images
+bc3eb970ab ar71xx: Fix 5 GHz MAC address for Archer C60 v2
+20f1b7d3f5 kernel: bump 4.14 4.14.101
+d669be4654 kernel: bump 4.9 to 4.9.158
+
+Compile-tested: ramips-mt7621, ar71xx-generic
+Runtime-tested: ramips-mt7621 (D-Link DIR860L B1)
+---
+ modules | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/modules b/modules
+index a4d97858..d40ed55d 100644
+--- a/modules
++++ b/modules
+@@ -2,7 +2,7 @@ GLUON_FEEDS='packages routing luci gluon'
+ 
+ OPENWRT_REPO=https://git.openwrt.org/openwrt/openwrt.git
+ OPENWRT_BRANCH=openwrt-18.06
+-OPENWRT_COMMIT=62feabecd8a84cfe0d6a5aa3bad2720dbf328370
++OPENWRT_COMMIT=1be6ff6dc0ab53d2191c49c32cae7f6f9aadd14d
+ 
+ PACKAGES_PACKAGES_REPO=https://github.com/openwrt/packages.git
+ PACKAGES_PACKAGES_BRANCH=openwrt-18.06
+-- 
+2.17.1
+

@@ -1,0 +1,29 @@
+From 9538ecb8de92d221512fd0bc0d582cdff5994c79 Mon Sep 17 00:00:00 2001
+From: rubo77 <github@r.z11.de>
+Date: Sat, 15 Jun 2019 23:03:17 +0200
+Subject: [PATCH] docs: Add example how to build all targets
+
+---
+ docs/user/getting_started.rst | 6 ++++++
+ 1 file changed, 6 insertions(+)
+
+diff --git a/docs/user/getting_started.rst b/docs/user/getting_started.rst
+index fa4feeec..fe995198 100644
+--- a/docs/user/getting_started.rst
++++ b/docs/user/getting_started.rst
+@@ -93,6 +93,12 @@ In case of errors read the messages carefully and try to fix the stated issues
+ ``ar71xx-generic`` is the most common target and will generate images for most of the supported hardware.
+ To see a complete list of supported targets, call ``make`` without setting ``GLUON_TARGET``.
+ 
++To build all targets use a loop like this:
++
++    for TARGET in $(make list-targets); do
++      make GLUON_TARGET=$TARGET
++    done
++
+ You should generally reserve 5GB of disk space and additionally about 10GB for each `GLUON_TARGET`.
+ 
+ The built images can be found in the directory `output/images`. Of these, the `factory`
+-- 
+2.17.1
+

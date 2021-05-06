@@ -1,0 +1,105 @@
+From d1a98596ff4d74fd6a67060e014af9809e8b9e3c Mon Sep 17 00:00:00 2001
+From: Andreas Ziegler <dev@andreas-ziegler.de>
+Date: Sat, 28 Dec 2019 16:45:48 +0100
+Subject: [PATCH] patches: refresh OpenWrt patches
+
+---
+ .../0012-tools-mktplinkfw2-add-split-uboot-layout.patch   | 8 ++++----
+ .../0013-ramips-add-support-for-Archer-C50-v4.patch       | 4 ++--
+ .../0016-ramips-add-support-for-Netgear-R6120.patch       | 4 ++--
+ .../0023-ar71xx-Add-support-for-TP-Link-CPE210-v3.patch   | 6 +++---
+ 4 files changed, 11 insertions(+), 11 deletions(-)
+
+diff --git a/patches/openwrt/0012-tools-mktplinkfw2-add-split-uboot-layout.patch b/patches/openwrt/0012-tools-mktplinkfw2-add-split-uboot-layout.patch
+index 4df76cf6..b7220b8b 100644
+--- a/patches/openwrt/0012-tools-mktplinkfw2-add-split-uboot-layout.patch
++++ b/patches/openwrt/0012-tools-mktplinkfw2-add-split-uboot-layout.patch
+@@ -11,16 +11,16 @@ diff --git a/tools/firmware-utils/src/mktplinkfw2.c b/tools/firmware-utils/src/m
+ index dead49e7af8839bac5d1dee7445cf8921208c970..35db848bbab9f8315526dfa24ed351ad58878dde 100644
+ --- a/tools/firmware-utils/src/mktplinkfw2.c
+ +++ b/tools/firmware-utils/src/mktplinkfw2.c
+-@@ -146,6 +146,12 @@ static struct flash_layout layouts[] = {
+- 		.kernel_la	= 0x80000000,
++@@ -147,6 +147,12 @@ static struct flash_layout layouts[] = {
+  		.kernel_ep	= 0x80000000,
+  		.rootfs_ofs	= 0x140000,
+-+	}, {
++ 	}, {
+ +		.id		= "8MSUmtk", /* Split U-Boot OS */
+ +		.fw_max_len	= 0x770000,
+ +		.kernel_la	= 0x80000000,
+ +		.kernel_ep	= 0x80000000,
+ +		.rootfs_ofs	= 0x140000,
+- 	}, {
+++	}, {
+  		.id		= "8MLmtk",
+  		.fw_max_len	= 0x7b0000,
++ 		.kernel_la	= 0x80000000,
+diff --git a/patches/openwrt/0013-ramips-add-support-for-Archer-C50-v4.patch b/patches/openwrt/0013-ramips-add-support-for-Archer-C50-v4.patch
+index 52c5a9d6..02c19dec 100644
+--- a/patches/openwrt/0013-ramips-add-support-for-Archer-C50-v4.patch
++++ b/patches/openwrt/0013-ramips-add-support-for-Archer-C50-v4.patch
+@@ -112,10 +112,10 @@ index 6057275978591192e3b7799a8e6d97761c3e23a5..19386b9e139a25fd1ac29cd9a66b738b
+  	ucidef_set_led_switch "wan" "wan" "$boardname:green:wan" "switch0" "0x01"
+  	ucidef_set_led_wlan "wlan2g" "wlan2g" "$boardname:green:wlan2g" "phy0tpt"
+ diff --git a/target/linux/ramips/base-files/etc/board.d/02_network b/target/linux/ramips/base-files/etc/board.d/02_network
+-index ebf40ad1fa874d324b43c8f0613bca53a19ab2d0..1c6cc6b0af745b43b81bbfffc9b5462c1b88defc 100755
++index 4a58f61b925902725705a99dba8d370cfeb8b91a..c8bb6622333afaaf5b70ca4afd2ada2055d0399e 100755
+ --- a/target/linux/ramips/base-files/etc/board.d/02_network
+ +++ b/target/linux/ramips/base-files/etc/board.d/02_network
+-@@ -205,6 +205,7 @@ ramips_setup_interfaces()
++@@ -203,6 +203,7 @@ ramips_setup_interfaces()
+  	rt-n14u|\
+  	tplink,c20-v4|\
+  	tplink,c50-v3|\
+diff --git a/patches/openwrt/0016-ramips-add-support-for-Netgear-R6120.patch b/patches/openwrt/0016-ramips-add-support-for-Netgear-R6120.patch
+index 7367a81f..46c82092 100644
+--- a/patches/openwrt/0016-ramips-add-support-for-Netgear-R6120.patch
++++ b/patches/openwrt/0016-ramips-add-support-for-Netgear-R6120.patch
+@@ -37,10 +37,10 @@ index 19386b9e139a25fd1ac29cd9a66b738b5b092cdf..4203773b4fa3ec771f07b7a8c414a416
+  	set_usb_led "$boardname:red:status"
+  	;;
+ diff --git a/target/linux/ramips/base-files/etc/board.d/02_network b/target/linux/ramips/base-files/etc/board.d/02_network
+-index 1c6cc6b0af745b43b81bbfffc9b5462c1b88defc..9424c7ddfd64f9149a24ff91e63b71990265d211 100755
++index c8bb6622333afaaf5b70ca4afd2ada2055d0399e..92430fc525a0eb48decee907f614e3278aadfd8b 100755
+ --- a/target/linux/ramips/base-files/etc/board.d/02_network
+ +++ b/target/linux/ramips/base-files/etc/board.d/02_network
+-@@ -301,6 +301,10 @@ ramips_setup_interfaces()
++@@ -304,6 +304,10 @@ ramips_setup_interfaces()
+  			"0:lan" "1:lan" "2:lan" "3:lan" "6t@eth0"
+  		ucidef_set_interface_wan "usb0"
+  		;;
+diff --git a/patches/openwrt/0023-ar71xx-Add-support-for-TP-Link-CPE210-v3.patch b/patches/openwrt/0023-ar71xx-Add-support-for-TP-Link-CPE210-v3.patch
+index 20213733..1f99a4e5 100644
+--- a/patches/openwrt/0023-ar71xx-Add-support-for-TP-Link-CPE210-v3.patch
++++ b/patches/openwrt/0023-ar71xx-Add-support-for-TP-Link-CPE210-v3.patch
+@@ -28,7 +28,7 @@ definition from cpe210-v2]
+ Signed-off-by: Adrian Schmutzler <freifunk@adrianschmutzler.de>
+ 
+ diff --git a/target/linux/ar71xx/base-files/etc/board.d/01_leds b/target/linux/ar71xx/base-files/etc/board.d/01_leds
+-index 23f3d23bf53883fb08944bc65b98cac06a16c0a5..e0222f3637b60b89a6ef6c0d10cfb20fbe73f075 100755
++index 037eaee7196b229ec67a08417d88dcb92995c17f..92f3c0281a485fd671b0f8490edaad997a2af25e 100755
+ --- a/target/linux/ar71xx/base-files/etc/board.d/01_leds
+ +++ b/target/linux/ar71xx/base-files/etc/board.d/01_leds
+ @@ -249,6 +249,7 @@ cf-e530n)
+@@ -50,7 +50,7 @@ index 23f3d23bf53883fb08944bc65b98cac06a16c0a5..e0222f3637b60b89a6ef6c0d10cfb20f
+  		;;
+  	*)
+ diff --git a/target/linux/ar71xx/base-files/etc/board.d/02_network b/target/linux/ar71xx/base-files/etc/board.d/02_network
+-index e9522252a2b8ba7de1c8ca7d070ff7f2897aade9..386d93e58451b953937320b1bfe8d71ed73c69fd 100755
++index befa032cd4c93779cf66b8b57a15e4bcba7fc959..908743c05eaac7092d3dfb117f23a934507dffd0 100755
+ --- a/target/linux/ar71xx/base-files/etc/board.d/02_network
+ +++ b/target/linux/ar71xx/base-files/etc/board.d/02_network
+ @@ -75,6 +75,7 @@ ar71xx_setup_interfaces()
+@@ -77,7 +77,7 @@ index ccbd4e77c324a36e7fba6e6dccad59d8f94a3921..2200069c647b33220126e797b6a61928
+  		name="cpe505n"
+  		;;
+ diff --git a/target/linux/ar71xx/base-files/lib/upgrade/platform.sh b/target/linux/ar71xx/base-files/lib/upgrade/platform.sh
+-index ca1270b7fdc84c53f8417c226f18ca4fff1f27d8..a04dd7441d28e9db4dc7c744707bb5f35936da00 100755
++index 8558fde3fef9738220a1598a3e4135836c8279f4..f7bb7dbbcd2606cdcbf2c76aa30a96831a232617 100755
+ --- a/target/linux/ar71xx/base-files/lib/upgrade/platform.sh
+ +++ b/target/linux/ar71xx/base-files/lib/upgrade/platform.sh
+ @@ -587,7 +587,8 @@ platform_check_image() {
+-- 
+2.17.1
+

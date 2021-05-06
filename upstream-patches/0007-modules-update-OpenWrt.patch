@@ -1,0 +1,52 @@
+From 17d22a56616e6d8d71155d91f8db8dff5ad3eeb1 Mon Sep 17 00:00:00 2001
+From: Martin Weinelt <martin@darmstadt.freifunk.net>
+Date: Tue, 15 Jan 2019 17:07:04 +0100
+Subject: [PATCH] modules: update OpenWrt
+
+939fa07b04 kernel: bump 4.14 to 4.14.93
+cae263227f kernel: bump 4.9 to 4.9.150
+f34ad1a8f0 mt76: update to the latest version
+d58c6aedb6 tools/firmware-utils: fix sysupgrade typo in mkdapimg2
+0cef35f096 tools/firmware-utils: fix sysupgrade typo in mkdapimg
+0d6eaa0ba5 octeon: fix typo in platform.sh
+069fda746e fstools: update to the latest master branch
+3b4e779e93 fstools: update to git HEAD
+d7275c0312 fstools: filter unknown action in mount.hotplug script
+e0daa62af6 fstools: Install mount.hotplug and 10-fstab.defaults as 600
+4c0e15fc16 base-files: install missing /etc/iproute2/ematch_map
+c3fef269d6 cns3xxx: use actual size reads for PCIe
+367ccf7a2d kernel: bump 4.14 to 4.14.91
+b9dcf2de5f kernel: bump 4.9 to 4.9.148
+a8cc06c537 mac80211: brcmfmac: backport firmware loading changes & fix memory bugs
+c5c20f510a odhcpd: noop to fix PKG_SOURCE_DATE
+62ddfaff32 odhcpd: filter routes based on prefix_filter
+8a9b0b95df apm821xx: switch MX60(W)'s recovery images to multi-image method
+afcdf099b7 kernel: fix f2fs on big endian machines
+016a71a18a odhcpd: backport prefix filter/NETEV_ADDR6LIST_CHANGE event fixes
+806b570a35 ath10k: update QCA4019 firmware
+baa00b2182 brcm2708-gpu-fw: update to git HEAD
+5af6b7976f bcm53xx: backport DTS changes queued for the 4.21
+dbbba84ed4 bcm53xx: rename dts backport patches changing their prefixes
+
+Compile-tested: ar71xx, ramips-{mt7621,mt76x8}, x86-64
+Runtime-tested: ramips-mt7621 (D-Link DIR860L)
+---
+ modules | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/modules b/modules
+index 5583b77b..2ff89a53 100644
+--- a/modules
++++ b/modules
+@@ -2,7 +2,7 @@ GLUON_FEEDS='packages routing luci gluon'
+ 
+ OPENWRT_REPO=https://git.openwrt.org/openwrt/openwrt.git
+ OPENWRT_BRANCH=openwrt-18.06
+-OPENWRT_COMMIT=eef6bd3393f406f73187a670fa34d5e6a228f9e8
++OPENWRT_COMMIT=939fa07b041fef58196fba8dd4b5184adb7b4d3f
+ 
+ PACKAGES_PACKAGES_REPO=https://github.com/openwrt/packages.git
+ PACKAGES_PACKAGES_BRANCH=openwrt-18.06
+-- 
+2.17.1
+

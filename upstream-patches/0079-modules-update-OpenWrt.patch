@@ -1,0 +1,33 @@
+From 4458b794332593dc0edbe71f8e3d949b654e3192 Mon Sep 17 00:00:00 2001
+From: Martin Weinelt <martin@darmstadt.freifunk.net>
+Date: Sat, 29 Jun 2019 02:04:33 +0200
+Subject: [PATCH] modules: update OpenWrt
+
+ef686b7292 uqmi: bump to latest git HEAD
+3dc740257b uqmi: inherit firewall zone membership to virtual sub interfaces
+a2c22b8776 uqmi: fix PIN_STATUS_FAILED error with MC7455 WCDMA/LTE modem
+d5ff0897cb kernel: bump 4.14 to 4.14.131
+18266fc6c0 kernel: bump 4.9 to 4.9.184
+
+Compile-tested: mpc85xx-generic, ramips-mt7621
+Runtime-tested: mpc85xx-generic (TP-Link WDR4900 v1), ramips-mt7621 (D-Link DIR-860L B1)
+---
+ modules | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/modules b/modules
+index 4168b881..67c2d5fc 100644
+--- a/modules
++++ b/modules
+@@ -2,7 +2,7 @@ GLUON_FEEDS='packages routing luci gluon'
+ 
+ OPENWRT_REPO=https://git.openwrt.org/openwrt/openwrt.git
+ OPENWRT_BRANCH=openwrt-18.06
+-OPENWRT_COMMIT=5e771160b81bfec760a5f7f114cc5dc41ff595e6
++OPENWRT_COMMIT=ef686b72923792d6db852a752a07649fe38eca6b
+ 
+ PACKAGES_PACKAGES_REPO=https://github.com/openwrt/packages.git
+ PACKAGES_PACKAGES_BRANCH=openwrt-18.06
+-- 
+2.17.1
+

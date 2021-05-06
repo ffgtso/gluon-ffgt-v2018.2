@@ -1,0 +1,54 @@
+From aa2c0dc3f9819de9deb902a0c36f098f49619c2a Mon Sep 17 00:00:00 2001
+From: Chrissi^ <chris@tinyhost.de>
+Date: Wed, 31 Jul 2019 22:36:52 +0200
+Subject: [PATCH] gluon-mesh-vpn-core: Add dependency for KERNEL_NET_ACT_POLICE
+
+This is a fix for the broken ingress traffic-shaping in gluon v2018.2.2
+and possibly earlier.
+
+For ingress traffic shaping the kernel option NET_ACT_POLICE is needed.
+Before this patch there was no dependency to this. Neither in
+gluon_core, gluon-mesh-vpn-core nor in the package.
+
+This patch adds this dependency.
+
+[Matthias Schiffer: move dependency from GLUON_CORE to gluon-mesh-vpn-core]
+
+Fixes #1790
+
+(cherry picked from commit dc8149abc4c377d8718f1d8295472ba98c2208d4)
+---
+ package/gluon-core/Config.in         | 4 ++++
+ package/gluon-mesh-vpn-core/Makefile | 1 +
+ 2 files changed, 5 insertions(+)
+
+diff --git a/package/gluon-core/Config.in b/package/gluon-core/Config.in
+index caf4f4c6..3f381f92 100644
+--- a/package/gluon-core/Config.in
++++ b/package/gluon-core/Config.in
+@@ -50,6 +50,10 @@ config KERNEL_NET_CLS_ACT
+ 	bool
+ 	select KERNEL_NET_CLS
+ 
++config KERNEL_NET_ACT_POLICE
++	bool
++	select KERNEL_NET_CLS_ACT
++
+ config KERNEL_NET_CLS_BASIC
+ 	bool
+ 	select KERNEL_NET_CLS
+diff --git a/package/gluon-mesh-vpn-core/Makefile b/package/gluon-mesh-vpn-core/Makefile
+index f161333f..1acf17ca 100644
+--- a/package/gluon-mesh-vpn-core/Makefile
++++ b/package/gluon-mesh-vpn-core/Makefile
+@@ -13,6 +13,7 @@ define Package/gluon-mesh-vpn-core
+ 	+@GLUON_SPECIALIZE_KERNEL:KERNEL_NETFILTER_XT_MATCH_PKTTYPE \
+ 	+@GLUON_SPECIALIZE_KERNEL:KERNEL_NETFILTER_XT_MATCH_QUOTA \
+ 	+@GLUON_SPECIALIZE_KERNEL:KERNEL_NET_CLS_BASIC \
++	+@GLUON_SPECIALIZE_KERNEL:KERNEL_NET_ACT_POLICE \
+ 	+@GLUON_SPECIALIZE_KERNEL:KERNEL_NET_SCH_TBF \
+ 	+@GLUON_SPECIALIZE_KERNEL:KERNEL_NET_SCH_INGRESS
+   USERID:=:gluon-mesh-vpn=800
+-- 
+2.17.1
+

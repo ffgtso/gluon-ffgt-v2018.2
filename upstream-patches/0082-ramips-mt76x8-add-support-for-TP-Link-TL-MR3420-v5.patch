@@ -1,0 +1,40 @@
+From 8e51a64cf0f4b8661732ae00afa93902a4877466 Mon Sep 17 00:00:00 2001
+From: Andreas Ziegler <dev@andreas-ziegler.de>
+Date: Mon, 1 Jul 2019 19:29:26 +0200
+Subject: [PATCH] ramips-mt76x8: add support for TP-Link TL-MR3420 v5
+
+---
+ docs/index.rst        | 1 +
+ targets/ramips-mt76x8 | 4 ++++
+ 2 files changed, 5 insertions(+)
+
+diff --git a/docs/index.rst b/docs/index.rst
+index 418bdaef..37c364ce 100644
+--- a/docs/index.rst
++++ b/docs/index.rst
+@@ -378,6 +378,7 @@ ramips-mt76x8
+ 
+ * TP-Link
+ 
++  - TL-MR3420 v5 [#80211s]_
+   - TL-WR841N v13 [#80211s]_
+   - Archer C50 v3 [#80211s]_
+   - Archer C50 v4 [#80211s]_
+diff --git a/targets/ramips-mt76x8 b/targets/ramips-mt76x8
+index b0d8bf6b..a367b01f 100644
+--- a/targets/ramips-mt76x8
++++ b/targets/ramips-mt76x8
+@@ -23,6 +23,10 @@ device tp-link-tl-wr841n-v13 tl-wr841n-v13
+ factory
+ extra_image -squashfs-tftp-recovery -bootloader .bin
+ 
++device tp-link-tl-mr3420-v5 tplink_tl-mr3420-v5
++factory
++extra_image -squashfs-tftp-recovery -bootloader .bin
++
+ 
+ # VoCore 2
+ 
+-- 
+2.17.1
+

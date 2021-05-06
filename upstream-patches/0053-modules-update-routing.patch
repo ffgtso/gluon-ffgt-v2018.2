@@ -1,0 +1,30 @@
+From c49e04745ddb922f2f8f674bb0e78f694c71bc6c Mon Sep 17 00:00:00 2001
+From: Martin Weinelt <martin@darmstadt.freifunk.net>
+Date: Sun, 2 Jun 2019 02:51:43 +0200
+Subject: [PATCH] modules: update routing
+
+cad1fba Merge pull request #469 from ecsv/batadv-for-18.06
+145ba7f batman-adv: Merge bugfixes from 2019.2
+40b7519 batman-adv: Reorder patches
+
+(cherry picked from commit 832de8615aaa6b7ad228059aea22e92426fde6f0)
+---
+ modules | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/modules b/modules
+index 504ac323..9ab1b848 100644
+--- a/modules
++++ b/modules
+@@ -10,7 +10,7 @@ PACKAGES_PACKAGES_COMMIT=5d3cb594e49132158ca7b41f4246421078e8f92a
+ 
+ PACKAGES_ROUTING_REPO=https://github.com/openwrt-routing/packages.git
+ PACKAGES_ROUTING_BRANCH=openwrt-18.06
+-PACKAGES_ROUTING_COMMIT=e5fe4b63e8063d87ccbdc9044f77e5f57e9f5eed
++PACKAGES_ROUTING_COMMIT=cad1fba86fa5fa787332d27e371a461afec0ad32
+ 
+ PACKAGES_LUCI_REPO=https://github.com/openwrt/luci.git
+ PACKAGES_LUCI_BRANCH=openwrt-18.06
+-- 
+2.17.1
+

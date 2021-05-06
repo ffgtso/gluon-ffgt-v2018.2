@@ -1,0 +1,38 @@
+From 75c8e00f831f1a2f7e53e873b78bf2c87ff9deb0 Mon Sep 17 00:00:00 2001
+From: bobcanthelpyou <bobcanthelpyou@users.noreply.github.com>
+Date: Sun, 10 Mar 2019 02:52:34 +0100
+Subject: [PATCH] docs: remove unavailable devices (#1667)
+
+- A Picostation M5 never existed
+- TL-WR710N v1 and v2.1 are part of ar71xx-generic not ar71xx-tiny
+
+(cherry picked from commit e8b37b2d7c80f5fbc81efb98753fbf0ce5104d16)
+---
+ docs/index.rst | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/docs/index.rst b/docs/index.rst
+index 03934b79..7ae535b7 100644
+--- a/docs/index.rst
++++ b/docs/index.rst
+@@ -220,7 +220,7 @@ ar71xx-generic
+   - Loco M2/M5 XW
+   - Nanostation M2/M5
+   - Nanostation M2/M5 XW
+-  - Picostation M2/M5
++  - Picostation M2
+   - Rocket M2/M5
+   - Rocket M2/M5 Ti
+   - Rocket M2/M5 XW
+@@ -281,7 +281,7 @@ ar71xx-tiny
+   - TL-WA7210N (v2)
+   - TL-WA7510N (v1)
+   - TL-WR703N (v1)
+-  - TL-WR710N (v1, v2, v2.1)
++  - TL-WR710N (v2)
+   - TL-WR740N (v1, v3, v4, v5)
+   - TL-WR741N/ND (v1, v2, v4, v5)
+   - TL-WR743N/ND (v1, v2)
+-- 
+2.17.1
+

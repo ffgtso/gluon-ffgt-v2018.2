@@ -1,0 +1,32 @@
+From 92ecb316a5e1215dbdc57ced470dc8af69228466 Mon Sep 17 00:00:00 2001
+From: Vincent Wiemann <vincent.wiemann@ironai.com>
+Date: Sat, 10 Aug 2019 10:17:29 +0200
+Subject: [PATCH] ar71xx-generic: Fix packages for GL.iNet AR750 (#1792)
+
+The profile for GL.iNet AR750 currently selects ATH10K_PACKAGES, but this device actually has a QCA9887 which needs another driver.
+This commit fixes the issue by setting ATH10K_PACKAGES_QCA9887 instead.
+
+(cherry picked from commit 0a22218304c2481dd1e8e606e7df6ea40b078f6e)
+---
+ targets/ar71xx-generic | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/targets/ar71xx-generic b/targets/ar71xx-generic
+index 9f3f8f77..08ed3463 100644
+--- a/targets/ar71xx-generic
++++ b/targets/ar71xx-generic
+@@ -85,9 +85,10 @@ factory
+ 
+ device gl.inet-gl-ar750 gl-ar750
+ manifest_alias gl-ar750
+-packages $ATH10K_PACKAGES
++packages $ATH10K_PACKAGES_QCA9887
+ factory
+ 
++
+ # Linksys by Cisco
+ 
+ device linksys-wrt160nl wrt160nl WRT160NL
+-- 
+2.17.1
+

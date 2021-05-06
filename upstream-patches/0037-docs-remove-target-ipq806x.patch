@@ -1,0 +1,31 @@
+From c283f20dd7e9d09b27723ee036a6cbfdf2b3d883 Mon Sep 17 00:00:00 2001
+From: bobcanthelpyou <bob@canthelpyou.com>
+Date: Sun, 24 Mar 2019 03:01:53 +0100
+Subject: [PATCH] docs: remove target ipq806x
+
+was marked as broken by #1526 cause of #1505
+---
+ docs/index.rst | 7 -------
+ 1 file changed, 7 deletions(-)
+
+diff --git a/docs/index.rst b/docs/index.rst
+index c5767ae5..5b02997c 100644
+--- a/docs/index.rst
++++ b/docs/index.rst
+@@ -331,13 +331,6 @@ ipq40xx
+   - NBG6617 [#80211s]_
+   - WRE6606 [#80211s]_
+ 
+-ipq806x
+-^^^^^^^
+-
+-* TP-Link
+-
+-  - Archer C2600 [#80211s]_
+-
+ mpc85xx-generic
+ ^^^^^^^^^^^^^^^
+ 
+-- 
+2.17.1
+

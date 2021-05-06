@@ -1,0 +1,135 @@
+From d8aa17c9e5b2bf45ca3ac6ba90f58424e97d1407 Mon Sep 17 00:00:00 2001
+From: bobcanthelpyou <bobcanthelpyou@users.noreply.github.com>
+Date: Mon, 25 Feb 2019 21:24:08 +0100
+Subject: [PATCH] gluon-web-node-role: Update i18n role translation (#1655)
+
+---
+ package/gluon-web-node-role/i18n/de.po        | 20 +++++++++----------
+ package/gluon-web-node-role/i18n/fr.po        | 20 +++++++++----------
+ .../i18n/gluon-web-node-role.pot              | 12 +++++------
+ .../config-mode/model/admin/noderole.lua      |  5 +++--
+ 4 files changed, 29 insertions(+), 28 deletions(-)
+
+diff --git a/package/gluon-web-node-role/i18n/de.po b/package/gluon-web-node-role/i18n/de.po
+index 969ca1cf..577ce652 100644
+--- a/package/gluon-web-node-role/i18n/de.po
++++ b/package/gluon-web-node-role/i18n/de.po
+@@ -10,18 +10,18 @@ msgstr ""
+ "Content-Transfer-Encoding: 8bit\n"
+ "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+ 
+-msgid "Node role"
+-msgstr "Verwendungszweck"
+-
+-msgid "Role"
+-msgstr "Rolle"
+-
+ msgid ""
+ "If this node has a special role within the mesh network you can specify this "
+ "role here. Please find out about the available roles and their impact first. "
+ "Only change the role if you know what you are doing."
+ msgstr ""
+-"Wenn dein Knoten eine besondere Rolle im Mesh-Netzwerk einnimmt, "
+-"kannst du diese hier angeben. Bringe bitte zuvor in Erfahrung, welche "
+-"Bedeutung die zur Verfügung stehenden Rollen haben. "
+-"Setze die Rolle nur, wenn du weißt, was du tust."
++"Wenn dein Knoten eine besondere Rolle im Mesh-Netzwerk einnimmt, kannst du "
++"diese hier angeben. Bringe bitte zuvor in Erfahrung, welche Bedeutung die "
++"zur Verfügung stehenden Rollen haben. Setze die Rolle nur, wenn du weißt, "
++"was du tust."
++
++msgid "Node role"
++msgstr "Verwendungszweck"
++
++msgid "Role"
++msgstr "Rolle"
+diff --git a/package/gluon-web-node-role/i18n/fr.po b/package/gluon-web-node-role/i18n/fr.po
+index bebaa294..b6a6f3bb 100644
+--- a/package/gluon-web-node-role/i18n/fr.po
++++ b/package/gluon-web-node-role/i18n/fr.po
+@@ -10,18 +10,18 @@ msgstr ""
+ "Content-Transfer-Encoding: 8bit\n"
+ "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+ 
+-msgid "Node role"
+-msgstr "Rôle du nœud"
+-
+-msgid "Role"
+-msgstr "Rôle"
+-
+ msgid ""
+ "If this node has a special role within the mesh network you can specify this "
+ "role here. Please find out about the available roles and their impact first. "
+ "Only change the role if you know what you are doing."
+ msgstr ""
+-"Si votre nœud a un rôle spécial dans le réseau MESH, vous pouvez "
+-"spécifier ce rôle ici. Avant de changer, informez vous sur les rôles "
+-"disponibles et sur leur impacts. Changez de rôle uniquement si vous "
+-"comprenez ce que vous faites."
++"Si votre nœud a un rôle spécial dans le réseau MESH, vous pouvez spécifier "
++"ce rôle ici. Avant de changer, informez vous sur les rôles disponibles et "
++"sur leur impacts. Changez de rôle uniquement si vous comprenez ce que vous "
++"faites."
++
++msgid "Node role"
++msgstr "Rôle du nœud"
++
++msgid "Role"
++msgstr "Rôle"
+diff --git a/package/gluon-web-node-role/i18n/gluon-web-node-role.pot b/package/gluon-web-node-role/i18n/gluon-web-node-role.pot
+index 027ae2e6..adc597d3 100644
+--- a/package/gluon-web-node-role/i18n/gluon-web-node-role.pot
++++ b/package/gluon-web-node-role/i18n/gluon-web-node-role.pot
+@@ -1,14 +1,14 @@
+ msgid ""
+ msgstr "Content-Type: text/plain; charset=UTF-8"
+ 
+-msgid "Node role"
++msgid ""
++"If this node has a special role within the mesh network you can specify this "
++"role here. Please find out about the available roles and their impact first. "
++"Only change the role if you know what you are doing."
+ msgstr ""
+ 
+-msgid "Role"
++msgid "Node role"
+ msgstr ""
+ 
+-msgid ""
+-"If this node has a special role within the mesh network you can specify this role here. "
+-"Please find out about the available roles and their impact first. "
+-"Only change the role if you know what you are doing."
++msgid "Role"
+ msgstr ""
+diff --git a/package/gluon-web-node-role/luasrc/lib/gluon/config-mode/model/admin/noderole.lua b/package/gluon-web-node-role/luasrc/lib/gluon/config-mode/model/admin/noderole.lua
+index 5fe33459..3419e628 100644
+--- a/package/gluon-web-node-role/luasrc/lib/gluon/config-mode/model/admin/noderole.lua
++++ b/package/gluon-web-node-role/luasrc/lib/gluon/config-mode/model/admin/noderole.lua
+@@ -1,5 +1,6 @@
+ local f, s, o
+ local site = require 'gluon.site'
++local site_i18n = i18n 'gluon-site'
+ local uci = require("simple-uci").cursor()
+ local config = 'gluon-node-info'
+ 
+@@ -9,7 +10,7 @@ local role = uci:get(config, uci:get_first(config, "system"), "role")
+ f = Form(translate("Node role"))
+ 
+ s = f:section(Section, nil, translate(
+-	"If this node has a special role within the freifunk network you can specify this role here. "
++	"If this node has a special role within the mesh network you can specify this role here. "
+ 	.. "Please find out about the available roles and their impact first. "
+ 	.. "Only change the role if you know what you are doing."
+ ))
+@@ -17,7 +18,7 @@ s = f:section(Section, nil, translate(
+ o = s:option(ListValue, "role", translate("Role"))
+ o.default = role
+ for _, role in ipairs(site.roles.list()) do
+-	o:value(role, translate('gluon-web-node-role:role:' .. role))
++	o:value(role, site_i18n.translate('gluon-web-node-role:role:' .. role))
+ end
+ 
+ function o:write(data)
+-- 
+2.17.1
+

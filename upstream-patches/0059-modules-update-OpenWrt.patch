@@ -1,0 +1,49 @@
+From bc55bb1db17529e0cc3b939046154cffdca1382d Mon Sep 17 00:00:00 2001
+From: Martin Weinelt <martin@darmstadt.freifunk.net>
+Date: Tue, 18 Jun 2019 15:58:04 +0200
+Subject: [PATCH] modules: update OpenWrt
+
+2999c342aa kernel: bump 4.14 to 4.14.127
+9de2f4d4ce kernel: bump 4.9 to 4.9.182
+5fe809d718 Revert "ipq806x: fix EA8500 switch control"
+e493230e84 kernel: bump 4.14 to 4.14.126
+c449130bb2 mvebu: fixes commit f63a1caf22cb
+6fa6f74e37 kernel: backport 4.18 patch adding DMI_PRODUCT_SKU
+2cd234d96b mac80211: brcmfmac: backport important fixes from kernel 5.2
+85eda6f61e kernel: mt29f_spinand: fix memory leak during page program
+a0543d8e70 uboot-fritz4040: update PKG_MIRROR_HASH
+f63a1caf22 kernel: bump 4.14 to 4.14.125
+40b1e899ba kernel: bump 4.9 to 4.9.181
+5dbac47426 kernel: re-add bridge allow reception on disabled port
+5d27e87de7 rpcd: fix init script reload action
+1867f10807 kernel: bump 4.14 to 4.14.123
+7fe1b4a4b2 kernel: bump 4.9 to 4.9.180
+6563e494a0 kernel: bump 4.14 to 4.14.122
+e3408d09b0 kernel: bump 4.9 to 4.9.179
+b2b1265a1d apm821xx: backport accepted linux-crypto patches
+
+Fixes: CVE-2019-11477, CVE-2019-11478, CVE-2019-11479
+
+Compile-tested: x86_64
+Runtime-tested: x86_64
+(cherry picked from commit 1b06a15bbd7d1d4060238fb0745fece73a6d4821)
+---
+ modules | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/modules b/modules
+index 5b4c1bbb..dad5097d 100644
+--- a/modules
++++ b/modules
+@@ -2,7 +2,7 @@ GLUON_FEEDS='packages routing luci gluon'
+ 
+ OPENWRT_REPO=https://git.openwrt.org/openwrt/openwrt.git
+ OPENWRT_BRANCH=openwrt-18.06
+-OPENWRT_COMMIT=67619619195aa57b2d3169b659e677cd8b879e2a
++OPENWRT_COMMIT=2999c342aa9def638ccce0cef2ffcafa5c63a703
+ 
+ PACKAGES_PACKAGES_REPO=https://github.com/openwrt/packages.git
+ PACKAGES_PACKAGES_BRANCH=openwrt-18.06
+-- 
+2.17.1
+

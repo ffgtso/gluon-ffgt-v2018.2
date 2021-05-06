@@ -1,0 +1,30 @@
+From 1ae362f8510eb3db2431245364462de825967b64 Mon Sep 17 00:00:00 2001
+From: Martin Weinelt <martin@darmstadt.freifunk.net>
+Date: Sun, 27 Jan 2019 17:58:21 +0100
+Subject: [PATCH] modules: update routing
+
+ea345d1 Merge pull request #442 from ecsv/batadv-18.06
+0231308 batman-adv: Merge bugfixes from 2019.0
+
+Compile-tested: ar71xx-{tiny,generic}, ramips-mt7621, x86-64
+Runtime-tested: ar71xx-generic (TP-Link TL-WR1043NDv2)
+---
+ modules | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/modules b/modules
+index f1217826..ddb56142 100644
+--- a/modules
++++ b/modules
+@@ -10,7 +10,7 @@ PACKAGES_PACKAGES_COMMIT=d05b98c6c86da58db5cbda3c945007be09583609
+ 
+ PACKAGES_ROUTING_REPO=https://github.com/openwrt-routing/packages.git
+ PACKAGES_ROUTING_BRANCH=openwrt-18.06
+-PACKAGES_ROUTING_COMMIT=bc6e7f6903c8237c77131aedfc92dba40e1bc6ac
++PACKAGES_ROUTING_COMMIT=ea345d16a6e27c2a8fdf67bf543cc36a5f189131
+ 
+ PACKAGES_LUCI_REPO=https://github.com/openwrt/luci.git
+ PACKAGES_LUCI_BRANCH=openwrt-18.06
+-- 
+2.17.1
+

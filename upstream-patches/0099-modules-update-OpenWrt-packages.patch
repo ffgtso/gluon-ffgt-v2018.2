@@ -1,0 +1,308 @@
+From 9611afd1af7bbb42d97521c976935dd27a312830 Mon Sep 17 00:00:00 2001
+From: Andreas Ziegler <dev@andreas-ziegler.de>
+Date: Sat, 28 Dec 2019 15:07:27 +0100
+Subject: [PATCH] modules: update OpenWrt packages
+
+998ef11cb grilo: copy vapi files to versioned vala dir
+8f7b6a2bb grilo: update vapi files, copy to unversioned dir
+b89a2903b lcdproc: Fix non x86 platforms on musl
+6e079e91c Merge pull request #10763 from leonghui/wiki-link-update-18.06
+3727d98ce php7: update to 7.2.26
+49b5fc001 bind: Update to version 9.11.14
+279f4a338 Merge pull request #10855 from BKPepe/python3-18.06
+29fe5f91d python3: Updated to version 3.6.10
+102c621fc Merge pull request #10846 from cshoredaniel/pr-18.06-fix-nut-cgi-initscript
+45c95e862 nut: Fix NUT CGI startup script
+d810a3039 Merge pull request #10752 from stangri/18.06-https-dns-proxy
+036917465 https-dns-proxy: switch to https-dns-proxy package name
+0a3b6465f treewide: update wiki links
+44b1f65cc Merge pull request #10744 from luizluca/libvpx-fixcve
+98ca3621c libvpx: backport security fixes
+cce63a697 luajit: install libluajit-5.1.so.2
+c1975f5a1 luajit: add .hpp to InstallDev
+6f528c678 nano: update to 4.6
+be3ec8bae Merge pull request #10678 from gladiac1337/haproxy-1.8.23-openwrt-18.06
+bc37a31b1 haproxy: Update HAProxy to v1.8.23
+fff2e26a9 transmission: sync with master branch
+2986916b8 tor: update to version 4.1.6
+edeac5d3a Merge pull request #9836 from cotequeiroz/grilo-plugins_xml
+8794f0956 grilo-plugins: adjust CONFIGURE_ARGS
+c3ab7aace grilo-plugins: remove XML::Parser build dependency
+86af45302 grilo-plugins: use hostpkg glib-compile-resources
+8ef82e962 transmission: Disable webseeding
+bd8b4df19 transmission: Fix tracker issue with some firewalls
+71969eb04 php7: Update to version 7.2.25
+3d409f615 php7: mark /etc/config/php7-fastcgi as conffile
+d77c32928 php7-mod-xmlreader: add conditional dependency to php7-mod-dom (fixes #10201)
+8667e35c1 php7: bump to 7.2.23
+8dc64ea14 php7: update to 7.2.22
+882e46916 php7: update to 7.2.21
+bbd4ec6cf Merge pull request #10609 from ja-pa/bind-update
+d0726f1f2 bind: update to version 9.11.13 (security fix)
+04a8496b7 unbound: Update to version 1.9.5
+70a990ac4 Merge pull request #10520 from Kulipator/libmraa_ramips_fix
+cf4e50ab7 Compilation fix & upgrade to version 0.8.1
+1b64cb83d Libmraa compilation fix
+d02965832 Libmraa compilation fix
+b83b26c33 perl: fixed host compilation of static perl on MacOS
+f496ed58d Merge pull request #9671 from BKPepe/clamav1806
+340d5ce71 protobuf-c: Fix typo on build dependency.
+e9c2ba68f libgd: Properly disable iconv support
+e31213308 wget: provides gnu-wget
+9f4f78da1 acme: Bring up-to-date with master
+938818ec4 ruby: bump to 2.5.7
+0f0c062d3 python-cryptography: fix CVE-2018-10903
+5a9d222e5 python-cryptography: Add support for LibreSSL 2.7.x
+5edcc9f30 Merge pull request #10324 from jefferyto/python-2.7.17-openwrt-18.06
+f184eb5f0 python: Update to 2.7.17, refresh patches
+4d9282a4d Merge pull request #10312 from stangri/18.06-vpnbypass
+7001d4748 vpnbypass: bugfix: PROCD command not found on stop
+7dbad81f8 Merge pull request #10279 from BKPepe/sudo-18.06
+4c72f8dd6 sudo: Update to version 1.8.28p1
+b504ac553 irssi: update to version 1.2.2 (security fix)
+e98bc6874 Merge branch 'pr/10215' into openwrt-18.06
+f2812716f Merge pull request #9997 from flyn-org/openldap-18.06
+22a272ccf Merge pull request #10237 from jefferyto/gammu-fix-lib-symlinks-openwrt-18.06
+6e2b8c2da gammu: Fix lib symlinks
+9c7cf9880 bind: Update to version 9.11.11
+728edfbdc Merge pull request #10108 from BKPepe/expat-1806
+a8ca56684 Merge pull request #10167 from BKPepe/unbound18.06
+e84deea05 python3-pip: fix install rule
+c4710f780 nano: update to 4.5
+cae699fc4 Merge pull request #10164 from stangri/18.06-simple-adblock
+c674fa684 unbound: Update to version 1.9.4
+0b8eee5fb unbound: update to 1.9.3
+dba87ee0c simple-adblock: bugfix: proper dnsmasq reload on stop, rework start/stop logic
+5452bb833 Merge pull request #10156 from gladiac1337/haproxy-1.8.21-openwrt-18.06
+1bb725133 haproxy: Update HAProxy to v1.8.21
+da5a8e596 Merge pull request #10155 from jefferyto/python-bpo-38243-34155-openwrt-18.06
+ad7b3c618 Merge pull request #10143 from stangri/18.06-simple-adblock
+dad9a1a2a python: Fix CVE-2019-16056, CVE-2019-16935
+b677e3eee simple-adblock: bugfix and improvements (check description)
+7a8808940 clamav: Remove build hacks
+eef89800e clamav: update to version 0.100.3
+b60caa494 Merge pull request #10120 from BKPepe/youtubedl-1806
+2d822fb62 haveged: convert to procd
+4fe703393 haveged: update to 1.9.8
+36919e51f youtube-dl: Update to version 2019.9.28
+00133e1e0 Merge pull request #10118 from BKPepe/libgcrypt-1806
+126cdd7c6 python3: fix CVE-2019-16056 and delete two patches
+0d9eeca45 python3: backport three security patches
+f19f9ffc9 expat: Update to version 2.2.9
+c0dea72f9 expat: update to version 2.2.7 (security fix)
+deae9b348 expat: fix host build issue with docbook
+fec2709d7 expat: disable docbook
+fefe8e1f7 lib/expat: Update to 2.2.6
+c64a4e86c Merge pull request #9893 from BKPepe/bind-18.06
+d98310a3f Merge pull request #9798 from ja-pa/zmq-security-fix-18.06
+03fb174ec net/mosquitto: bump to 1.5.9 for CVE
+8eca9c916 python-crypto: Fix two CVEs
+7ec22baf1 libgcrypt: backport fix for CVE-2019-13627
+6305d09b1 Merge pull request #10063 from stangri/18.06-simple-adblock
+fb43709a6 simple-adblock: dnsmasq.ipset option support, better handling of IDNs, updated README
+9265be544 zmq: fix CVE-2019-13132
+29cd578d6 Merge pull request #10041 from neheb/djj
+f29206251 django: Update to 1.8.19
+3772cdb3d openldap: update to 2.4.48
+bbc22a721 openldap: Add static function declaration
+c272beb43 openldap: version update and new build parameters
+ec029b9ae openldap: Switch tarball sources to https and http
+f587f31ad lighttpd: mark module configuration files
+19879284a dovecot: Update to version 2.2.36.4
+8f42d4b71 wget: fix CVE-2018-20483
+f6e7b56a5 fastd: fix init script for multiple VPN instances
+06cc48c49 haveged: update to 1.9.6
+6014389c5 Merge pull request #9894 from BKPepe/keepalived-18.06
+7a7820fb1 Merge pull request #9904 from RussellSenior/my-18.06
+18f9e437c patch: rename CVE-2019-13638 patch to mollify uscan
+abe523c57 patch: apply upstream patch for CVE-2019-13638
+a3d8698e3 tools/patch: apply upstream patch for CVE-2019-13636
+ebb9b3f17 exfat-nofuse: drop BUILD_PATENTED
+2d9a3eff4 keepalived: add patch for CVE-2018-19115
+e4508a351 keepalived: Update to version 1.4.5
+e0af45ff7 bind: Update to version 9.11.10
+6d8293801 lighttpd: fix CVE-2018-19052
+55dcffd7f Merge pull request #9841 from cshoredaniel/pr-18.06-nut-targetted
+bdddb2127 Merge pull request #9703 from BKPepe/squid-18.06
+e45c2f206 Merge pull request #9814 from guidosarducci/speedtest-18.06
+f01e4171d Merge pull request #9777 from BKPepe/tar_1806
+85b1ca7fb Merge pull request #9821 from cotequeiroz/vim_host
+c1aa1f784 nut: Bump PKG_RELEASE
+361e6aaaa nut: Handle FSD properly
+a2ab989c1 nut: Fix init actions (server/driver)
+ef0bd0140 nut: Fix extra diver params config
+77519cd20 nut: Fix permissions with runas
+e97684652 nut: Fix statepath handling
+5f69f9a06 nut: Fix unset of runas user (ups server)
+ccdec71b5 nut: Fix bad check for conf exists
+c963f0c29 nut: Fix upsmon init actions
+d06bd2d7e nut: Fix unset of runas user (upsmon)
+020dfd454 nut: Remove unecessary libwrap dependency
+7fe013ce7 nano: update to 4.4
+f50edf52d ttyd: Add dependency for vim
+d9b29fe5e vim: Add host build to install xxd
+5640d6e68 speedtest-netperf: new package to measure network performance
+fded0497e Merge pull request #9789 from ja-pa/libarchive-security-fix-18.06
+43f49bdbc apinger: Update to latest git revision
+45e38f116 node-serialport: fix i386 build fail
+19ee25df6 node-hid: fix i386 build fail
+232df2821 libarchive: update to version 3.4.0 (security fix)
+3bdadf4d7 Merge branch 'pr/9778' into openwrt-18.06
+14219822e fastd: update URL and PKG_SOURCE_URL
+41a85be71 libuecc: update URL and PKG_SOURCE_URL
+51462b3df Merge pull request #9754 from champtar/openwrt-18.06
+23eeeeadc bind: update to 9.11.9
+0d7a23418 tar: update to version 1.32
+70e3f5d17 tar: Update to 1.31
+01466e76e lcdringer: Remove libcheck dependency to fix compilation
+502ccc496 Merge pull request #9765 from stangri/18.06-simple-adblock
+ddcbf080a dovecot: update to version 2.2.36.3
+8e8087706 [18.06] simple-adblock: support for varios DNS resolvers/options
+a4314b868 linknx: Fix compilation with libiconv
+ca99a333e rp-pppoe: redo glibc patch
+5327a95d6 rp-pppoe: Fixed compilation with glibc
+19d101bd2 ldbus: Add zip/host build dependency
+db85d6ec9 gcc: Do not build on ARC
+80742d0da prometheus-node-exporter-lua: add target & system to OpenWrt collector
+06e513ba3 prometheus-node-exporter-lua: Add more wifi_station metrics and fix naming according to original wifi_linux.go node exporter
+60002eb62 prometheus-node-exporter-lua: Bump PKG_RELEASE
+1014b0987 prometheus-node-exporter-lua: Add wifi_station_count
+0d224bdfa prometheus-node-exporter-lua: wifi packets should be a counter
+a08f5e17f prometheus-node-exporter-lua: Bump PKG_RELEASE
+b03545e0b prometheus-node-exporter-lua: fix missing conntrack values
+70bd5a36c prometheus-node-exporter-lua: change network metric type to counter
+ad34675df prometheus-node-exporter-lua: add lantiq dsl modem collector
+d921407d4 openssh: fix pthread functions redefine with pam module
+df3d2312c Merge pull request #9403 from BKPepe/yt-18.06
+6d55ff558 Merge pull request #9513 from BKPepe/openwrt-18.06_python_shebang
+b29ecaa11 libinput: Add missing header to fix compilation
+3414ca250 libglog: fix removing libunwind dependency
+e41a914bf libseccomp: workaround a recursive dependency
+a1eccf223 lxc: Backport uClibc patch
+08c0b2949 lxc: hide seccomp support for arc
+d3e54adcd lxc: Disable use of unwanted libraries explicity
+bb1882d29 boost: Fix compilation with uClibc-ng
+ad26261e1 iodine: Fix compilation with uClibc-ng
+e42f8da51 mariadb: add dependency on libaio for arc as well
+29e7e0619 libudev-fbsd: update to git source as of 2017-12-16
+a0e1a7700 Merge pull request #9710 from BKPepe/icu_fix
+4bda1ca54 icu: fix patch, which adds big endian ARM support
+78bf09b08 golang: update to version 1.10.8
+fa384e518 libgee: copy vapi files to versioned vala dir
+2d59ec88d libgee: use unversioned vala dir, misc fixes
+d7a071f4a icu: Fix patch from faulty backport
+1607a5bd8 squid: update to version 3.5.28
+983bd0370 protobuf-c: add build time dependency protobuf
+87b6ed6b9 jamvm: depends on supported architectures
+ca0e429e2 icu: Backport ARMEB support patch
+ad43d622e gammu: Really fix compilation under 64-bit
+1ad4f3a9b gammu: Fix build under 64-bit targets.
+cdbc72464 youtube-dl: update to version 2019.8.2
+af975f0f3 python,python3: Fix overridden usr/bin symlinks
+421c58a94 python,python3: move shebang handle in install script
+243f921ae subversion: update to version 1.10.6
+70a1ffdf0 jq: compile with _GNU_SOURCE (fixes #7785)
+fb0566686 libsoc: fix compilation error caused by multiple goals on make
+1fec7ea23 rtl-ais: Fix compilation on i386
+de750bba0 libdouble-conversion: Update to 3.1.4
+49a6444ab libdouble-conversion: Update to 3.1.1
+056cad1e0 libaio: Update to 0.3.112
+b4e4e5a00 libaio: Backport DESTDIR patch to simplify the Makefile
+7ccc104c9 libaio: Update to 0.3.111
+d6145ce0c quassel-irssi: Fix compilation with GCC8
+47e4537fd quasselc: Fix compilation with uClibc-ng
+b26ffad37 Merge pull request #9625 from micmac1/18.06-mariadb10141
+e5cc721c7 mariadb: security bump to 10.1.41
+1eeea30fd softethervpn: Fix compilation under 64-bit targets
+276b7d9b0 Merge pull request #9542 from jefferyto/python-musl-find_library-openwrt-18.06
+e1cb7f98d opendkim: Fix compilation with uClibc-ng
+bc8fc4fb7 tvheadend: Fix compilation on GCC8
+4c1252e9d tvheadend: Fix compilation without deprecated OpenSSL 1.0.2 APIs
+bd96e95e3 tvheadend: Fix compilation without OpenSSL deprecated APIs
+59f7eb5e1 libartnet: Fix compilation with GCC8
+e00521bc7 poco: Do not build on ARC
+0662e833e flent-tools: Fix compilation with uClibc-ng
+131c9436c oath-toolkit: Fix compilation with uClibc-ng
+0524f21ed flashrom: Add ARC support
+8923eecd3 elektra: Fix compilation with uClibc-ng
+24ad87702 elektra: Fix compilation without deprecated OpenSSL APIs
+f30898d3e hfsprogs: Fix compilation with uClibc-ng
+02d64a922 dosfsutils: Properly fix iconv linking
+f273581e1 dosfstools: Fix compilation with full NLS
+4870eab08 loudmouth: Fix compilation with uClibc-ng
+b1adbbe5b loudmouth: Disable debug and fix no deprecated API compilation
+30ddc8a15 transmission: Fix compilation under uClibc-ng
+0cac0b3eb transmission: add PKGARCH:=all for transmission-web
+c2860ce2c transmission: Add LTO support to shave off 35KB off of the ipk
+b5957aed6 transmission: Allow user to configure web ui home directory
+cdc001736 open2300: Switch to GitHub fork
+dddcd5d90 softethervpn: Add openssl to host build deps
+0a4f88e56 softethervpn: Really fix iconv support
+e05f50c12 softethervpn: add package name to build dir
+8358aa690 softethervpn: cleanup host/build, pass HOST_*FLAGS
+5cb4c348a python,python3: Fix ctypes.util.find_library()
+d16a931db python: add patch for CVE-2018-20852
+2402c223d python: bump to version 2.7.16
+ae21f4990 python3: update to version 3.6.9
+12c96eaad diffutils: provide diff, cmp as alternatives
+04c9e6708 Merge pull request #9463 from ps790/patch-4
+4265311c1 Merge pull request #9461 from ps790/patch-2
+93e7b0982 coreutils: add alternatives support
+ef44ef698 bridge-utils: fix conflict with busybox brctl
+4e93f455a softethervpn: Update to rtm version 4.29-9680
+4682d1741 softethervpn: Pass FLAGS to CC for hamcorebuilder
+f424f7dfa wifidog: fix getting ip from interface, cleanup
+bba8e2c44 irssi: update to version 1.2.1 (security fix)
+d10ac7c29 Merge pull request #9396 from stangri/openwrt-18.06-simple-adblock
+78b0da469 simple-adblock: options to filter non-ASCII domains, local compressed storage
+1e398bbcb ocserv: updated to 0.12.4
+43bfa6fe4 Merge pull request #9292 from BKPepe/18.06-youtube
+68461c4c5 php7: update to 7.2.19
+f9b20e9dd php7: update to 7.2.18
+5779614d2 znc: backport fix for CVE-2019-12816
+63c532a71 youtube-dl: update to version 2019.06.21
+7879bbdb4 Revert "php7: Fix compilation without deprecated OpenSSL APIs"
+115f72fc4 Revert "php7: update to 7.2.18"
+70e4af441 Revert "php7: update to 7.2.19"
+d90a035c1 libxml2: update to 2.9.9
+5aa670ed3 libxml2: Fix CVE-2018-14404
+8abaf8a30 php7: update to 7.2.19
+8e9429f3e php7: update to 7.2.18
+a176ffa0a php7: Fix compilation without deprecated OpenSSL APIs
+53742f130 php7: update to 7.2.17
+81a8e5904 nano: update to 4.3
+dd927adce Merge pull request #9272 from gladiac1337/openwrt-18.06
+28007a8bd Merge pull request #9268 from EricLuehrsen/unbound_192_1806
+1784615d3 haproxy: Update HAProxy to v1.8.20
+88a7f98bd unbound: update to 1.9.2 with package bug fixes
+7290c123d Merge pull request #9232 from neheb/13
+356bb1162 haproxy: Remove unnecessary OpenSSL depends All of these are either not needed or not valid.
+3afd61982 lm-sensors: install libsensors using CP instead of INSTALL_DATA
+d8ecf9cb7 boost: Release update with minor fix
+efa0b885a znc: update my email address
+45e1b91ae Merge pull request #9193 from ryzhovau/getdns_lib-18.06
+55e357b66 getdns: fix library double packing
+810f22da8 nlbwmon: update to latest Git HEAD
+
+Compile-tested: ar71xx-generic
+Runtime-tested: ar71xx-generic
+---
+ modules | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/modules b/modules
+index 2e9f27da..edf58c43 100644
+--- a/modules
++++ b/modules
+@@ -6,7 +6,7 @@ OPENWRT_COMMIT=83ce31d3d88429b094f3436446294a17fa7041d4
+ 
+ PACKAGES_PACKAGES_REPO=https://github.com/openwrt/packages.git
+ PACKAGES_PACKAGES_BRANCH=openwrt-18.06
+-PACKAGES_PACKAGES_COMMIT=5d3cb594e49132158ca7b41f4246421078e8f92a
++PACKAGES_PACKAGES_COMMIT=998ef11cb4250309ec69505d9ee4a0f376815dbe
+ 
+ PACKAGES_ROUTING_REPO=https://github.com/openwrt-routing/packages.git
+ PACKAGES_ROUTING_BRANCH=openwrt-18.06
+-- 
+2.17.1
+
